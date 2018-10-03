@@ -1,12 +1,14 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import Layout from 'components/Layout'
 import Link from 'gatsby-link'
 import { css } from 'react-emotion'
+import { rhythm } from 'webhart-base/utils/typography'
+import Hero from 'components/Hero'
+import HolyCard from 'components/HolyCard'
+import { Container, ButtonStyle, Button } from 'webhart-base'
+import { colors, gradients } from 'webhart-base/utils/style'
 
-import Hero from '../components/Hero'
-import HolyCard from '../components/HolyCard'
-import { Container } from '../webhart-base'
-import { color } from '../webhart-base/utils/style'
+import { Fade } from 'webhart-base/utils/poses'
 
 import SEOIcon from '../../static/images/icons/SEO'
 import ResponsiveIcon from '../../static/images/icons/Mobile'
@@ -19,7 +21,7 @@ const cardProps = {
   circleSize: '75px',
   circleTop: '50px',
   extraStyle: css`
-    margin: 0 10px;
+    margin: 0 10px 50px;
     flex: 1 1 270px;
     position: relative;
   `,
@@ -32,12 +34,29 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { location } = this.props
     const activeCard = this.state.activeCard
     return (
-      <Layout key={`IndexPage-layout`} location={location}>
+      <>
         <Hero gradient="ligthBlue">
-          <h1>No better way to impress than with a tailor made suit!</h1>
+          <div
+            className={css`
+              display: inline;
+              align-self: flex-end;
+            `}
+          >
+            <Button>contact</Button>
+            <Button color={colors.white} background={gradients.orange}>
+              contact
+            </Button>
+          </div>
+          <h1
+            className={css`
+              font-size: 40px;
+              flex: 0 1 35px;
+            `}
+          >
+            No better way to impress than with a tailor made suit!
+          </h1>
         </Hero>
         <section
           className={css`
@@ -48,11 +67,10 @@ class IndexPage extends React.Component {
             width="wide"
             className={css`
               display: flex;
-              /* flex-wrap: wrap; */
               justify-content: space-between;
               text-align: center;
               p {
-                color: ${color.greyText};
+                color: ${colors.greyText};
               }
             `}
           >
@@ -64,9 +82,9 @@ class IndexPage extends React.Component {
             >
               <h2>speed</h2>
               <p>
-                Nowadays everything is designed to grab your attention. Speed is
-                key to get an impression across in the first place, no one likes
-                to wait.
+                We live in a world of distraction. Nothing like the rush of a
+                new notification. Grab your target’s attention before it’s lost
+                to the cloud.
               </p>
             </HolyCard>
             <HolyCard
@@ -109,8 +127,33 @@ class IndexPage extends React.Component {
             </HolyCard>
           </Container>
         </section>
-      </Layout>
+        <section>
+          <Container>
+            <div
+              className={css`
+                border-top: 1px solid black;
+                box-shadow: 0 -5px 5px -5px black;
+                padding: ${rhythm(1 / 2)};
+              `}
+            >
+              <p>
+                Velit qui ad adipisicing ut. Pariatur culpa pariatur ipsum est
+                fugiat eu reprehenderit Lorem aliqua occaecat. Voluptate qui
+                esse quis nostrud est. Incididunt irure sunt reprehenderit duis
+                irure do pariatur. Esse mollit ut deserunt nisi id proident id.
+                Labore eu consectetur qui sit magna ullamco esse voluptate ea
+                enim aliquip ad excepteur.
+              </p>
+            </div>
+          </Container>
+        </section>
+      </>
     )
   }
 }
+
+IndexPage.defaultProps = {
+  transitionComponent: Fade,
+}
+
 export default IndexPage

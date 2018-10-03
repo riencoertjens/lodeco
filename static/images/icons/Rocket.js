@@ -11,26 +11,26 @@ const Icon = () => (
     <path
       d="M7.70937 31.2078C6.40803 31.5858 4.92078 32.531 3.80535 33.6653C2.68991 34.7995 1.94629 36.1228 1.38857 37.6351C1.01676 38.9584 0.830857 40.4707 1.20267 41.794C2.50401 42.1721 3.80535 41.9831 5.29259 41.605C6.59393 41.2269 8.08118 40.2817 9.19661 39.1475C10.312 38.0132 11.0557 36.6899 11.6134 35.1776"
       stroke="#FE8B00"
-      stroke-width="2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M7.70829 18.9204L2.50293 24.2135H7.70829C12.3559 26.1039 16.074 29.5067 18.3049 34.9888V40.282L23.5103 34.9888L20.9076 27.0491C27.2284 26.6711 32.6197 24.2135 36.7096 19.1095C40.4277 13.8163 41.729 7.95609 40.6136 1.71776C34.1069 0.0164003 28.3438 1.33968 23.5103 5.68761C18.8626 10.6027 16.26 16.0848 15.7022 21.756L7.70829 18.9204Z"
       stroke="#FE8B00"
-      stroke-width="2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M31.5052 14.7616C33.5587 14.7616 35.2233 13.0688 35.2233 10.9808C35.2233 8.89268 33.5587 7.19995 31.5052 7.19995C29.4518 7.19995 27.7871 8.89268 27.7871 10.9808C27.7871 13.0688 29.4518 14.7616 31.5052 14.7616Z"
       stroke="#FE8B00"
-      stroke-width="2"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )

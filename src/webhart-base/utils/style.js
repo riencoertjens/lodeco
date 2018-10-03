@@ -16,13 +16,19 @@ export const typographyConfig = {
   }),
 }
 
-export const color = {
+export const colors = {
   primary: config.primaryColor,
   primaryBG: config.primaryBgColor,
-  greyText: '#828282',
-  accent: 'red',
-}
 
+  darkBlue: '#1e3a4a',
+  lightBlue: '#0599D1',
+  orange: '#E67E00',
+}
+export const gradients = {
+  darkBlue: 'linear-gradient(135deg, #325f7a, #0f1e28), #1e3a4a',
+  lightBlue: 'linear-gradient(135deg, #00C1FF, #097AAD), #0599D1',
+  orange: 'linear-gradient(135deg, #FF8C00, #CF7100), #E67E00',
+}
 export const sizing = {
   default: '16px',
   large: '18px',
@@ -53,20 +59,9 @@ export const font = {
   primary: 'sans-serif',
 }
 
-export const gradients = {
-  darkBlue: 'linear-gradient(135deg, #325f7a, #0f1e28), #1e3a4a',
-  lightBlue: 'linear-gradient(135deg, #00C1FF, #097AAD), #0599D1',
-  orange: 'linear-gradient(135deg, #FF8C00, #CF7100), #E67E00',
-}
-
-export const reset = () =>
-  injectGlobal`
-    ${require('reset-css')}
-  `
-
 export default {
   typographyConfig,
-  color,
+  colors,
   sizing,
   bps,
   breakpoints,
@@ -74,5 +69,4 @@ export default {
   mediaQueries,
   font,
   gradients,
-  reset,
 }

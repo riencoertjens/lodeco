@@ -11,7 +11,7 @@ class AboutPage extends React.Component {
 
     return (
       <>
-        <Hero gradient="orange">
+        <Hero gradient="lightBlue">
           <h1>Coding artisan</h1>
         </Hero>
         <section>

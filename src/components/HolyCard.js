@@ -25,6 +25,7 @@ export default props => {
           width: ${width};
           height: ${height};
           position: relative;
+
           display: inline-block;
           border-radius: ${containerCorner};
           ${props.active &&
@@ -41,21 +42,8 @@ export default props => {
             margin: ${circleTop} 50%;
             ${props.active && `box-shadow: inset ${shadow};`};
           }
-          ${props.active ||
-            `:before {
-            content: '';
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            ${'' /* background: red; */} position: absolute;
-            z-index: 10;
-            bottom: 10px;
-            margin-left: -15px;
-            border: solid black;
-            border-width: 0 2px 2px 0;
-            left: 50%;
-            transform: rotate(45deg);
-          }`} svg {
+
+          svg {
             position: absolute;
             top: 0;
             left: 50%;
@@ -101,19 +89,55 @@ export default props => {
         className={css`
           mix-blend-mode: unset;
           margin-top: calc(${circleSize} + ${circleTop});
+          margin-bottom: 50px;
           padding: 10px 25px;
           height: calc(100% - calc(${circleSize} + ${circleTop}));
           position: absolute;
           width: 100%;
           color: black;
           z-index: 9999999999;
-          ${props.active ||
-            `
-            p {
+          :after,
+          :before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            transition: 0.4s;
+          }
+          :after {
+            margin: -10px;
+            width: 20px;
+            height: 20px;
+            z-index: 10;
+            bottom: 20px;
+            border: solid black;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            ${props.active &&
+              `
+              opacity: 0;
+            `};
+          }
+          :before {
+            height: 50px;
+            z-index: -10;
+            border-left: 1px solid black;
+            bottom: -50px;
+            margin-left: -1px;
+            opacity: 0;
+            ${props.active &&
+              `
+              opacity: 1;
+            `};
+          }
+          p {
+            transition: 0.4s;
+            ${props.active ||
+              `
+
               text-shadow: ${shadow};
               color: transparent;
-            }
           `};
+          }
         `}
       >
         {children}

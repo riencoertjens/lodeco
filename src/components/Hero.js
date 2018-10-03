@@ -14,10 +14,12 @@ const Hero = props => {
         width: 100vw;
         height: calc(100vh - 50px);
         background: ${gradient};
+        background-attachment: fixed;
         color: white;
         position: relative;
-        padding: 15px 0 150px;
-        ${props.className};
+        padding-top: 20px;
+        padding-bottom: 130px;
+        ${className};
       `}
     >
       <Container
@@ -25,16 +27,17 @@ const Hero = props => {
         className={css`
           display: flex;
           flex-flow: column;
-          justify-content: space-evenly;
+          justify-content: space-around;
+          align-items: flex-start;
           height: 100%;
+          position: relative;
         `}
       >
         <img
           src={Logo}
           className={css`
-            max-height: calc(90vh - 150px);
-            max-width: 80vw;
-            object-fit: contain;
+            max-width: 450px;
+            flex: 0 1 300px;
             align-self: flex-end;
             ${logoStyle && logoStyle};
           `}

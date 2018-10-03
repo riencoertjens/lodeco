@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../Layout'
-import SEO from '../../webhart-base/SEO'
+import Layout from 'components/Layout'
+import SEO from 'webhart-base/SEO'
 import {
   ImageComponent,
   ContentComponent,

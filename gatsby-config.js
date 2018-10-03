@@ -15,6 +15,7 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-resolve-src`,
     //ui
     `gatsby-plugin-emotion`,
     {

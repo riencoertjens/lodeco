@@ -110,7 +110,7 @@ const MainWrapper = styled('main')``
 class Layout extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { menuActive: true }
+    this.state = { menuActive: false }
   }
   render() {
     return (

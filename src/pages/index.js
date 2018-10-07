@@ -8,8 +8,6 @@ import HolyCard from 'components/HolyCard'
 import { Container, ButtonStyle, Button } from 'webhart-base'
 import { colors, gradients } from 'webhart-base/utils/style'
 
-import { Fade } from 'webhart-base/utils/poses'
-
 import SEOIcon from '../../static/images/icons/SEO'
 import ResponsiveIcon from '../../static/images/icons/Mobile'
 import SecureIcon from '../../static/images/icons/Secure'
@@ -150,10 +148,6 @@ class IndexPage extends React.Component {
       </>
     )
   }
-}
-
-IndexPage.defaultProps = {
-  transitionComponent: Fade,
 }
 
 export default IndexPage

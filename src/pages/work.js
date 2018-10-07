@@ -3,8 +3,6 @@ import Layout from 'components/Layout'
 import Link from 'gatsby-link'
 import Hero from 'components/Hero'
 
-import { Fade } from 'webhart-base/utils/poses'
-
 class AboutPage extends React.Component {
   render() {
     const { location } = this.props
@@ -46,10 +44,6 @@ class AboutPage extends React.Component {
       </>
     )
   }
-}
-
-AboutPage.defaultProps = {
-  transitionComponent: Fade,
 }
 
 export default AboutPage

@@ -42,7 +42,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-obfuscate": "^2.1.10",
-    "react-pose": "^3.3.6",
+    "react-transition-group": "^2.5.0",
     "react-typography": "^0.16.13",
     "regenerator-runtime": "^0.12.1",
     "typeface-karla": "^0.0.54",

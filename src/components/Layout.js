@@ -14,13 +14,13 @@ import { Vortex as Hamburger } from 'react-burgers'
 injectGlobal`
   box-sizing: border-size;
 `
-const CircleDiameter = 600
+const CircleDiameter = 500
 const baseAngle = 0
 const NavStyle = props => css`
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 10000000;
+  z-index: 99999;
   mix-blend-mode: multiply;
   &:after {
     display: block;
@@ -48,10 +48,10 @@ const NavStyle = props => css`
     font-size: 20px;
     text-transform: uppercase;
     font-weight: 100;
-    width: ${CircleDiameter / 4}px;
+    width: ${CircleDiameter / 4 - 20}px;
     top: -15px;
-    left: 0;
-    text-align: center;
+    left: 9px;
+    text-align: right;
     transform-origin: 0 50%;
     padding: 10px;
     opacity: 1;

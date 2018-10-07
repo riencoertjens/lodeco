@@ -12,14 +12,5 @@ export const WrapPageElement = ({ element, props }) => {
 
   const UsedTransition = transitionComponent || Pose
 
-  return (
-    <Layout location={props.location}>
-      {/* <PoseGroup>
-        <UsedTransition key={key} {...props}>
-          {element}
-        </UsedTransition>
-      </PoseGroup> */}
-      {element}
-    </Layout>
-  )
+  return <Layout location={props.location}>{element}</Layout>
 }

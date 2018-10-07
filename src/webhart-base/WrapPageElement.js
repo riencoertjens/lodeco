@@ -14,11 +14,12 @@ export const WrapPageElement = ({ element, props }) => {
 
   return (
     <Layout location={props.location}>
-      <PoseGroup>
+      {/* <PoseGroup>
         <UsedTransition key={key} {...props}>
           {element}
         </UsedTransition>
-      </PoseGroup>
+      </PoseGroup> */}
+      {element}
     </Layout>
   )
 }

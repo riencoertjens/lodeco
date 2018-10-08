@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from 'components/Layout'
 import SEO from 'webhart-base/SEO'
 import {
   ImageComponent,
@@ -30,10 +29,10 @@ PostTemplate.propTypes = {
   CMSPreview: PropTypes.bool,
 }
 
-const PostPage = ({ data, location }) => {
+const PostPage = ({ data }) => {
   const post = data.post
   return (
-    <Layout location={location}>
+    <>
       <SEO />
       <PostTemplate
         image={{
@@ -45,7 +44,7 @@ const PostPage = ({ data, location }) => {
       >
         {post.html}
       </PostTemplate>
-    </Layout>
+    </>
   )
 }
 

@@ -6,6 +6,6 @@
 
 // You can delete this file if you're not using it
 
-import { WrapPageElement } from './src/webhart-base/WrapPageElement';
+import Layout from './src/components/layout'
 
-export const wrapPageElement = WrapPageElement;
+export const wrapPageElement = Layout

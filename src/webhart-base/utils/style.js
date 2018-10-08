@@ -1,17 +1,23 @@
-import { css } from 'react-emotion'
 import facepaint from 'facepaint'
-import { injectGlobal } from 'emotion'
 import config from './site-config'
+import { keyframes } from 'emotion'
 
 export const typographyConfig = {
-  baseFontSize: '16px',
-  baseLineHeight: 1.45,
-  headerFontFamily: ['Lato', 'sans-serif'],
+  baseFontSize: '18px',
+  bodyWeight: '400',
+  baseLineHeight: 1.5,
+  headerFontFamily: ['Poppins', 'sans-serif'],
   headerWeight: 'normal',
-  bodyFontFamily: ['Karla', 'sans-serif'],
+  bodyFontFamily: ['Poppins', 'sans-serif'],
   overrideThemeStyles: () => ({
     h1: {
-      fontWeight: '100',
+      fontWeight: '500',
+      // textTransform: 'uppercase',
+      letterSpacing: '1px',
+    },
+    code: {
+      fontFamily: 'Roboto Mono',
+      fontWeight: 200,
     },
   }),
 }
@@ -36,6 +42,28 @@ export const sizing = {
   width: '90vw',
 }
 
+export const animations = {
+  /* The typing effect */
+  typing: keyframes`
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    `,
+  /* The typewriter cursor effect */
+  blinkCaret: keyframes`
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: ${colors.orange};
+      }
+    `,
+}
+
 export const bps = ['600px', '900px', '1200px', '1800px']
 
 export const breakpoints = {
@@ -43,10 +71,24 @@ export const breakpoints = {
   wide: ['100%', '100%', '100%', bps[2]],
   superWide: ['100%', '100%', '100%', '100%', bps[3]],
 }
+
+const paddingY = '0'
+
 export const padding = {
-  normal: ['0 10px', 0],
-  wide: ['0 10px', '0 10px', '0 10px', 0],
-  superWide: ['0 10px', '0 10px', '0 10px', '0 10px', 0],
+  normal: [`${paddingY} 10px`, `${paddingY} 0`],
+  wide: [
+    `${paddingY} 10px`,
+    `${paddingY} 10px`,
+    `${paddingY} 10px`,
+    `${paddingY} 0`,
+  ],
+  superWide: [
+    `${paddingY} 10px`,
+    `${paddingY} 10px`,
+    `${paddingY} 10px`,
+    `${paddingY} 10px`,
+    `${paddingY} 0`,
+  ],
 }
 
 export const mediaQueries = facepaint(
@@ -64,6 +106,7 @@ export default {
   colors,
   sizing,
   bps,
+  animations,
   breakpoints,
   padding,
   mediaQueries,

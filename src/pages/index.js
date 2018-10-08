@@ -1,153 +1,269 @@
 import React from 'react'
-import Layout from 'components/Layout'
-import Link from 'gatsby-link'
-import { css } from 'react-emotion'
-import { rhythm } from 'webhart-base/utils/typography'
 import Hero from 'components/Hero'
-import HolyCard from 'components/HolyCard'
-import { Container, ButtonStyle, Button } from 'webhart-base'
+import { Container, Section } from 'webhart-base'
+import styled, { css } from 'react-emotion'
+import TypedText from 'components/TypedText'
+import Link from 'gatsby-link'
+
 import { colors, gradients } from 'webhart-base/utils/style'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import GatsbyLink from 'gatsby-link'
 
-import SEOIcon from '../../static/images/icons/SEO'
-import ResponsiveIcon from '../../static/images/icons/Mobile'
-import SecureIcon from '../../static/images/icons/Secure'
-import RocketIcon from '../../static/images/icons/Rocket'
+import twitterIcon from '../../static/images/icons/twitter.svg'
+import instagramIcon from '../../static/images/icons/instagram.svg'
+import stravaIcon from '../../static/images/icons/strava.svg'
+import RienHoofd from '../../static/images/RienHoofd.jpg'
 
-const cardProps = {
-  width: '270px',
-  height: '350px',
-  circleSize: '75px',
-  circleTop: '50px',
-  extraStyle: css`
-    margin: 0 10px 50px;
-    flex: 1 1 270px;
-    position: relative;
-  `,
-}
-
-class IndexPage extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { activeCard: false }
-  }
-
-  render() {
-    const activeCard = this.state.activeCard
-    return (
-      <>
-        <Hero gradient="ligthBlue">
-          <div
-            className={css`
-              display: inline;
-              align-self: flex-end;
-            `}
-          >
-            <Button>contact</Button>
-            <Button color={colors.white} background={gradients.orange}>
-              contact
-            </Button>
-          </div>
-          <h1
-            className={css`
-              font-size: 40px;
-              flex: 0 1 35px;
-            `}
-          >
-            No better way to impress than with a tailor made suit!
-          </h1>
-        </Hero>
-        <section
+const IndexPage = props => (
+  <React.Fragment>
+    <Hero gradient="darkBlue">
+      <div>
+        <h1>State of the art websites made by a human</h1>
+        <span>
+          (in plek van een groot bedrijf, snaptge? ma daar moet ik nog wa over
+          nadenken)
+        </span>
+      </div>
+    </Hero>
+    {/* intro */}
+    <Section>
+      <Container
+        className={css`
+          text-align: center;
+          max-width: 600px;
+          code {
+            color: ${colors.orange};
+          }
+        `}
+      >
+        <img
+          src={RienHoofd}
           className={css`
-            margin-top: -125px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 30px;
+          `}
+        />
+        <h2
+          className={css`
+            display: inline-block;
+            position: relative;
+            &:hover code,
+            code:hover {
+              display: block;
+            }
+            span {
+              font-size: 14px;
+              display: block;
+              position: absolute;
+              top: -7px;
+              right: -10px;
+              opacity: 1;
+              background: rgba(255, 255, 255, 0.75);
+              color: ${colors.orange};
+              border-radius: 50%;
+              width: 15px;
+              height: 15px;
+              code {
+                display: none;
+                background: rgba(255, 255, 255, 0.75);
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                padding: 0;
+                line-height: 1.3;
+                width: 250px;
+                font-size: 12px;
+              }
+            }
           `}
         >
-          <Container
-            width="wide"
-            className={css`
-              display: flex;
-              justify-content: space-between;
-              text-align: center;
-              p {
-                color: ${colors.greyText};
+          Hi, my name is Rien
+          <br />
+          <span>
+            ?<code>pronounced like 'Reen' in English</code>
+          </span>
+        </h2>
+        <p>
+          I'm a{' '}
+          <TypedText
+            items={[
+              'web developer',
+              'cyclist',
+              'athiëst',
+              'cat person',
+              'bicycle mechanic',
+            ]}
+          />{' '}
+          from <code>Belgium</code> based in <code>Girona, Spain</code>.<br />I
+          like to create top shelve websites tailored to your needs.
+          <br />
+          <Link to="/about">read more</Link>
+          <br />
+          <i>"first impressions last the longest"</i>
+        </p>
+      </Container>
+    </Section>
+    <Section>
+      <Container
+        className={css`
+          text-align: center;
+          max-width: 600px;
+          code {
+            color: ${colors.orange};
+          }
+        `}
+      >
+        <img
+          src={RienHoofd}
+          className={css`
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 30px;
+          `}
+        />
+        <h2
+          className={css`
+            display: inline-block;
+            position: relative;
+            &:hover code,
+            code:hover {
+              display: block;
+            }
+            span {
+              font-size: 14px;
+              display: block;
+              position: absolute;
+              top: -7px;
+              right: -10px;
+              opacity: 1;
+              background: rgba(255, 255, 255, 0.75);
+              color: ${colors.orange};
+              border-radius: 50%;
+              width: 15px;
+              height: 15px;
+              code {
+                display: none;
+                background: rgba(255, 255, 255, 0.75);
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                padding: 0;
+                line-height: 1.3;
+                width: 250px;
+                font-size: 12px;
               }
-            `}
+            }
+          `}
+        >
+          Hi, my name is Rien
+          <br />
+          <span>
+            ?<code>pronounced like 'Reen' in English</code>
+          </span>
+        </h2>
+        <p>
+          I'm a <code>web developer</code> and{' '}
+          <TypedText
+            items={['cyclist', 'athiëst', 'cat person', 'bicycle mechanic']}
+          />{' '}
+          from <code>Belgium</code> based in <code>Girona, Spain</code>.<br />I
+          like to create top shelve websites tailored to your needs.
+          <br />
+          <Link to="/about">read more</Link>
+          <br />
+          <i>"first impressions last the longest"</i>
+        </p>
+      </Container>
+    </Section>
+    {/* features */}
+    <Section>
+      <Container>
+        <h2>How to spot a killer website in the wild?</h2>
+        <p>rocket speed</p>
+        <p>secure</p>
+        <p>responsive</p>
+        <p>SEO</p>
+        <p>
+          <GatsbyLink to="/how">why & how?</GatsbyLink>
+          <br />
+
+          <br />
+          <GatsbyLink to="/packages">your options</GatsbyLink>
+        </p>
+      </Container>
+    </Section>
+    {/* work */}
+    <Section>
+      <Container>
+        <h2>Some of my work</h2>
+        <i>"no better way to impress than with a tailor made suit"</i>
+        <p>work work work</p>
+      </Container>
+    </Section>
+    {/* follow me */}
+    <Section>
+      <Container>
+        <h2>follow me:</h2>
+        <p
+          className={css`
+            img {
+              width: 20px;
+              vertical-align: middle;
+            }
+          `}
+        >
+          <OutboundLink
+            href="https://www.twitter.com/rien_coertjens/"
+            target="_blank"
+            rel="noreferrer noopener"
           >
-            <HolyCard
-              onClick={() => this.setState({ activeCard: 'speed' })}
-              active={activeCard == 'speed'}
-              {...cardProps}
-              icon={<RocketIcon />}
-            >
-              <h2>speed</h2>
-              <p>
-                We live in a world of distraction. Nothing like the rush of a
-                new notification. Grab your target’s attention before it’s lost
-                to the cloud.
-              </p>
-            </HolyCard>
-            <HolyCard
-              onClick={() => this.setState({ activeCard: 'responsive' })}
-              active={activeCard == 'responsive'}
-              {...cardProps}
-              icon={<ResponsiveIcon />}
-            >
-              <h2>responsive</h2>
-              <p>
-                Half the people online are mobile users on slower mobile
-                networks. Creating a good browsing experience for all users is
-                vital.
-              </p>
-            </HolyCard>
-            <HolyCard
-              onClick={() => this.setState({ activeCard: 'secure' })}
-              active={activeCard == 'secure'}
-              {...cardProps}
-              icon={<SecureIcon />}
-            >
-              <h2>secure</h2>
-              <p>
-                Online security is a global issue. Protecting your audience and
-                yourself from harm should be a major priority.
-              </p>
-            </HolyCard>
-            <HolyCard
-              onClick={() => this.setState({ activeCard: 'seo' })}
-              active={activeCard == 'seo'}
-              {...cardProps}
-              icon={<SEOIcon />}
-            >
-              <h2>seo</h2>
-              <p>
-                Speed, responsiveness and security are key ingredients in search
-                engine optimisation and getting your website to the top of the
-                stack.
-              </p>
-            </HolyCard>
-          </Container>
-        </section>
-        <section>
-          <Container>
-            <div
-              className={css`
-                border-top: 1px solid black;
-                box-shadow: 0 -5px 5px -5px black;
-                padding: ${rhythm(1 / 2)};
-              `}
-            >
-              <p>
-                Velit qui ad adipisicing ut. Pariatur culpa pariatur ipsum est
-                fugiat eu reprehenderit Lorem aliqua occaecat. Voluptate qui
-                esse quis nostrud est. Incididunt irure sunt reprehenderit duis
-                irure do pariatur. Esse mollit ut deserunt nisi id proident id.
-                Labore eu consectetur qui sit magna ullamco esse voluptate ea
-                enim aliquip ad excepteur.
-              </p>
-            </div>
-          </Container>
-        </section>
-      </>
-    )
-  }
-}
+            <img src={twitterIcon} />
+          </OutboundLink>{' '}
+          about my work
+          <br />
+          <OutboundLink
+            href="https://www.instagram.com/rien_coertjens/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src={instagramIcon} />
+          </OutboundLink>{' '}
+          what I'm up to
+          <br />
+          <OutboundLink
+            href="https://www.strava.com/athletes/432879"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src={stravaIcon} />
+          </OutboundLink>{' '}
+          where I'm riding
+          <br />
+          or <Link to="#contact">send me a message</Link>
+        </p>
+      </Container>
+    </Section>
+
+    {/* blog */}
+    <Section>
+      <Container>
+        <h2>Blog</h2>
+      </Container>
+    </Section>
+    {/* contact */}
+    <Section>
+      <Container>
+        <h2>Contact</h2>
+      </Container>
+    </Section>
+  </React.Fragment>
+)
 
 export default IndexPage

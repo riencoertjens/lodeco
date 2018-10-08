@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { css } from 'react-emotion'
 import { mediaQueries, breakpoints, padding, colors } from './utils/style'
 
@@ -13,7 +12,22 @@ export const ContainerStyle = props =>
 
 export const Container = styled.div`
   ${ContainerStyle};
+  *:last-child {
+    margin-bottom: 0;
+  }
   ${props => props.className};
+`
+
+export const Section = styled.section`
+  padding: 50px 0;
+  background: #eee;
+  :nth-child(even) {
+    background: #ddd;
+  }
+  ${Container} {
+    text-align: center;
+    max-width: 600px;
+  }
 `
 
 export const ButtonStyle = props => css`

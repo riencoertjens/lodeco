@@ -12,7 +12,7 @@ const Hero = props => {
       key="page-hero"
       className={css`
         width: 100vw;
-        height: calc(100vh - 50px);
+        height: 80vh;
         background: ${gradient};
         background-attachment: fixed;
         color: white;

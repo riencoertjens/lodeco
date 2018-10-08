@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled, { css } from 'react-emotion'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
@@ -17,7 +16,7 @@ const enter = css`
 
 const enterActive = css`
   opacity: 1;
-  transition: opacity 200ms ease-in;
+  transition: opacity 2000ms ease-in;
 `
 
 const exit = css`
@@ -27,7 +26,7 @@ const exit = css`
 
 const exitActive = css`
   ${position} opacity: 0.01;
-  transition: opacity 200ms ease-out;
+  transition: opacity 2000ms ease-out;
   z-index: 100;
 `
 
@@ -45,29 +44,20 @@ class TransitionHandler extends React.Component {
   }
 }
 
-const PageTransition = ({ children, location }) => (
+const PageTransition = props => (
   <TransitionGroup>
     <CSSTransition
+      // During SSR no location is set; this ensures the first transition works.
+      key={props.location ? props.location.pathname : '/'}
       classNames={{ enter, enterActive, exit, exitActive }}
-      timeout={{ enter: 200, exit: 200 }}
-      key={location.pathname}
+      timeout={{ enter: 2000, exit: 2000 }}
     >
-      <TransitionHandler location={location}>
+      <TransitionHandler location={props.location}>
         {/* This div receives the classes for transitioning. */}
-        <TransitionWrapper>{children}</TransitionWrapper>
+        <TransitionWrapper>{props.children}</TransitionWrapper>
       </TransitionHandler>
     </CSSTransition>
   </TransitionGroup>
 )
-
-PageTransition.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-}
 
 export default PageTransition

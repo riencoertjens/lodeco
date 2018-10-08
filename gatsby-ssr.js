@@ -8,6 +8,6 @@
 import 'typeface-poppins'
 import 'typeface-roboto-mono'
 
-import Layout from './src/components/layout'
+import Layout from './src/components/Layout'
 
 export const wrapPageElement = Layout

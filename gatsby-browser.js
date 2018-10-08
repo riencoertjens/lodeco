@@ -6,6 +6,6 @@
 
 // You can delete this file if you're not using it
 
-import Layout from './src/components/layout'
+import Layout from './src/components/Layout'
 
 export const wrapPageElement = Layout

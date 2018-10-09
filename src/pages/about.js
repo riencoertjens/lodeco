@@ -17,7 +17,12 @@ export default () => (
     `}
     render={data => (
       <React.Fragment>
-        <Hero gradient="orange" image={data.RienHoofd.childImageSharp.fluid}>
+        <Hero
+          logoAlign="flex-start"
+          titleAlign="right"
+          gradient="orange"
+          image={data.RienHoofd.childImageSharp.fluid}
+        >
           <h1>Coding artisan</h1>
         </Hero>
         <section>

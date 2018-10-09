@@ -23,7 +23,12 @@ export default () => (
     `}
     render={data => (
       <React.Fragment>
-        <Hero gradient="orange" image={data.sweatshop.childImageSharp.fluid}>
+        <Hero
+          logoAlign="flex-start"
+          titleAlign="right"
+          gradient="orange"
+          image={data.sweatshop.childImageSharp.fluid}
+        >
           <h2>No better way to impress than with a tailor made suit</h2>
         </Hero>
         <Section>

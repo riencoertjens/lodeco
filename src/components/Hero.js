@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from 'react-emotion'
 import { gradients } from '../webhart-base/utils/style'
 import Logo from '../../static/images/logo.svg'
+import LogoSVG from '../../static/images/Logo'
 import { Container } from '../webhart-base'
 import GatsbyImage from 'gatsby-image'
 import { rhythm } from '../webhart-base/utils/typography'
@@ -26,7 +27,10 @@ const Hero = props => {
         padding: ${rhythm(2)} 0;
         h1,
         h2 {
+          margin: ${rhythm()};
           font-size: 45px;
+          width: 100%;
+          text-align: ${props.titleAlign ? props.titleAlign : 'center'};
         }
         ${className};
       `}
@@ -59,15 +63,17 @@ const Hero = props => {
           position: relative;
         `}
       >
-        <img
-          src={Logo}
+        <LogoSVG
           className={css`
+            filter: drop-shadow(0 0 15px black);
             max-width: 450px;
+            max-height: 400px;
             flex: 0 1 300px;
-            align-self: flex-end;
+            align-self: ${props.logoAlign ? props.logoAlign : 'center'};
             ${logoStyle && logoStyle};
           `}
         />
+
         {children}
       </Container>
     </section>

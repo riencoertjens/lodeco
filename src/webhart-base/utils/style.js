@@ -72,6 +72,8 @@ export const breakpoints = {
   superWide: ['100%', '100%', '100%', '100%', bps[3]],
 }
 
+export const mediaQuery = bps.map(bp => `@media (min-width: ${bp})`)
+
 const paddingY = '0'
 
 export const padding = {

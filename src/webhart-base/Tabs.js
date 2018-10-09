@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import styled, { css } from 'react-emotion'
-import { gradients, colors } from '../webhart-base/utils/style'
+import { gradients, colors, mediaQuery } from '../webhart-base/utils/style'
 import { rhythm } from '../webhart-base/utils/typography'
+import { Container } from '.'
 
 const TabsWrapper = styled.div`
   position: relative;
-  margin: ${rhythm(1)} 0;
+  padding: ${rhythm(1)} 0;
   ${props => props.className};
+  text-align: center;
 `
 
 const TabButtons = styled.div`
@@ -14,7 +16,10 @@ const TabButtons = styled.div`
   position: relative;
   z-index: 99;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 10px;
+  ${mediaQuery[0]} {
+    margin: 0 auto;
+  }
   max-width: 600px;
   border-radius: 300px;
   overflow: hidden;
@@ -86,7 +91,7 @@ class Tabs extends Component {
   }
 }
 
-const TabWrapper = styled.div`
+export const Tab = styled(Container)`
   display: none;
   ${props =>
     props.active &&
@@ -94,8 +99,8 @@ const TabWrapper = styled.div`
     display: block;
   `};
 `
-export const Tab = ({ children, active }) => (
-  <TabWrapper active={active}>{children}</TabWrapper>
-)
+// const Tab = ({ children, active }) => (
+//   <TabWrapper active={active}>{children}</TabWrapper>
+// )
 
 export default Tabs

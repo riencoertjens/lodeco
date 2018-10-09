@@ -6,7 +6,7 @@ import Tabs, { Tab } from '../webhart-base/Tabs'
 import { css } from 'emotion'
 import { colors } from '../webhart-base/utils/style'
 
-const AboutPage = props => (
+const PackagesPage = props => (
   <React.Fragment>
     <Hero gradient="darkBlue">
       <h2>first impressions last the longest</h2>
@@ -27,8 +27,8 @@ const AboutPage = props => (
             }
           `}
         >
-          Every project is started with the same clear goals in mind:{' '}
-          <i>speed</i>, <i>security</i>, <i>SEO</i>, and <i>usability</i> across{' '}
+          In every project we keep the same clear goals in mind: <i>speed</i>,{' '}
+          <i>security</i>, <i>SEO</i>, and <i>usability</i> across{' '}
           <i>all devices</i>. <Link to="about">learn more</Link>
         </p>
         <p>
@@ -111,4 +111,4 @@ const AboutPage = props => (
   </React.Fragment>
 )
 
-export default AboutPage
+export default PackagesPage

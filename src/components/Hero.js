@@ -11,6 +11,8 @@ const Hero = props => {
     <section
       key="page-hero"
       className={css`
+        text-shadow: 1px 1px 0 black;
+
         width: 100vw;
         height: 80vh;
         background: ${gradient};

@@ -1,11 +1,10 @@
 import React from 'react'
 import { css } from 'react-emotion'
 import { gradients } from '../webhart-base/utils/style'
-import Logo from '../../static/images/logo.svg'
 import LogoSVG from '../../static/images/Logo'
 import { Container } from '../webhart-base'
 import GatsbyImage from 'gatsby-image'
-import { rhythm } from '../webhart-base/utils/typography'
+import { rhythm } from '../webhart-base/utils/style'
 const Hero = props => {
   const gradient = gradients[props.gradient] || gradients.lightBlue
   const { children, logoStyle, className } = props

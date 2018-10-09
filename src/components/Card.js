@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
-import { rhythm } from '../webhart-base/utils/typography'
+import { rhythm } from '../webhart-base/utils/style'
 
 const CardStyle = props => css`
   transition: transform 1s;

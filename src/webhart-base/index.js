@@ -6,7 +6,7 @@ import {
   colors,
   gradients,
 } from './utils/style'
-import { rhythm } from './utils/typography'
+import { rhythm } from './utils/style'
 import GatsbyLink from 'gatsby-link'
 
 export const ContainerStyle = props =>

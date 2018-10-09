@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled, { css } from 'react-emotion'
 import { gradients, colors, mediaQuery } from '../webhart-base/utils/style'
-import { rhythm } from '../webhart-base/utils/typography'
+import { rhythm } from '../webhart-base/utils/style'
 import { Container } from '.'
 
 const TabsWrapper = styled.div`

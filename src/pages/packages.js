@@ -5,7 +5,7 @@ import { Container, Section } from '../webhart-base'
 import Tabs, { Tab } from '../webhart-base/Tabs'
 import { css } from 'emotion'
 import { StaticQuery, graphql } from 'gatsby'
-import { rhythm } from '../webhart-base/utils/typography'
+import { rhythm } from '../webhart-base/utils/style'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 export default () => (

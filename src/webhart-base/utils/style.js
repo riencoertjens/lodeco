@@ -1,8 +1,10 @@
 import facepaint from 'facepaint'
 import config from './site-config'
 import { keyframes } from 'emotion'
-import {rhythm} from './typography'
-export const typographyConfig = {
+
+import Typography from 'typography'
+
+export const typography = new Typography({
   baseFontSize: '18px',
   bodyWeight: '400',
   baseLineHeight: 1.5,
@@ -20,7 +22,8 @@ export const typographyConfig = {
       fontWeight: 200,
     },
   }),
-}
+})
+export const { scale, rhythm, options } = typography
 
 export const colors = {
   primary: config.primaryColor,
@@ -104,7 +107,6 @@ export const font = {
 }
 
 export default {
-  typographyConfig,
   colors,
   sizing,
   bps,

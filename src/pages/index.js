@@ -61,7 +61,7 @@ const FeatureCardIconProps = {
 
 const IndexPage = props => (
   <React.Fragment>
-    {/* <Hero gradient="darkBlue">
+    <Hero gradient="darkBlue">
       <div>
         <h1>State of the art websites made by a human</h1>
         <span>
@@ -69,7 +69,7 @@ const IndexPage = props => (
           nadenken)
         </span>
       </div>
-    </Hero> */}
+    </Hero>
     {/* intro */}
     <Section>
       <Container

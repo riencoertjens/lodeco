@@ -3,6 +3,9 @@ import Helmet from 'react-helmet'
 import styled, { injectGlobal, css } from 'react-emotion'
 import PageTransition from '../webhart-base/PageTransition'
 
+import 'typeface-poppins'
+import 'typeface-roboto-mono'
+
 import Nav from './Navigation'
 import { colors, gradients } from '../webhart-base/utils/style'
 
@@ -35,7 +38,7 @@ const Layout = ({ element, props }) => (
     </Helmet>
 
     <React.Fragment key="app-content">
-      <Nav />
+      {/* <Nav /> */}
       <div>
         <AppWrapper {...props}>{element}</AppWrapper>
       </div>

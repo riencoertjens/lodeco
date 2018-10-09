@@ -14,9 +14,8 @@ const Hero = props => {
       key="page-hero"
       className={css`
         text-shadow: 1px 1px 0 black;
-
         width: 100vw;
-        height: 80vh;
+        height: 100vh;
         background: ${gradient};
         background-size: cover;
         background-position: center top;
@@ -27,7 +26,7 @@ const Hero = props => {
         padding: ${rhythm(2)} 0;
         h1,
         h2 {
-          margin: ${rhythm()};
+          margin: ${rhythm()} 0;
           font-size: 45px;
           width: 100%;
           text-align: ${props.titleAlign ? props.titleAlign : 'center'};
@@ -57,7 +56,7 @@ const Hero = props => {
           z-index: 10;
           display: flex;
           flex-flow: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: flex-start;
           height: 100%;
           position: relative;
@@ -66,8 +65,8 @@ const Hero = props => {
         <LogoSVG
           className={css`
             filter: drop-shadow(0 0 15px black);
-            max-width: 450px;
-            max-height: 400px;
+            width: 450px;
+            max-width: 100%;
             flex: 0 1 300px;
             align-self: ${props.logoAlign ? props.logoAlign : 'center'};
             ${logoStyle && logoStyle};

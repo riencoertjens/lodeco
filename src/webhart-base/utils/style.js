@@ -1,7 +1,7 @@
 import facepaint from 'facepaint'
 import config from './site-config'
 import { keyframes } from 'emotion'
-
+import {rhythm} from './typography'
 export const typographyConfig = {
   baseFontSize: '18px',
   bodyWeight: '400',
@@ -77,18 +77,18 @@ export const mediaQuery = bps.map(bp => `@media (min-width: ${bp})`)
 const paddingY = '0'
 
 export const padding = {
-  normal: [`${paddingY} 10px`, `${paddingY} 0`],
+  normal: [`${paddingY} ${rhythm(1/2)}`, `${paddingY} 0`],
   wide: [
-    `${paddingY} 10px`,
-    `${paddingY} 10px`,
-    `${paddingY} 10px`,
+    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1/2)}`,
     `${paddingY} 0`,
   ],
   superWide: [
-    `${paddingY} 10px`,
-    `${paddingY} 10px`,
-    `${paddingY} 10px`,
-    `${paddingY} 10px`,
+    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1/2)}`,
     `${paddingY} 0`,
   ],
 }

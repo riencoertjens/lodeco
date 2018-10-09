@@ -3,6 +3,8 @@ import styled, { css } from 'react-emotion'
 import Link from 'gatsby-link'
 import { Spin as Hamburger } from 'react-burgers'
 
+import Headroom from 'react-headroom'
+
 const CircleDiameter = 500
 const baseAngle = 0
 const LinkSpread = CircleDiameter / 3 / 2 - 10
@@ -101,6 +103,7 @@ class Navigation extends React.Component {
   render() {
     const { menuActive } = true //this.state
     return (
+      <Headroom>
       <nav
         active={menuActive}
         className={css`
@@ -138,6 +141,7 @@ class Navigation extends React.Component {
           padding="20px"
         />
       </nav>
+      </Headroom>
     )
   }
 }

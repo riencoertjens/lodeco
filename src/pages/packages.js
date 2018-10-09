@@ -33,7 +33,7 @@ export default () => (
         </Hero>
         <Section>
           <Container>
-            <h1>choose your service</h1>
+            <h1>pick your service</h1>
             <p
               className={css`
                 max-width: 600px;
@@ -54,16 +54,19 @@ export default () => (
 
           <Tabs
             className={css`
-              text-align: center;
-              ul {
-                margin: 0 auto ${rhythm()};
-                display: inline-block;
-                li {
-                  text-align: left;
+              ${Container}{
+                text-align: center;
+                ul {
+                  max-width: 400px;
+                  margin-bottom:${rhythm()};
+                  display: inline-block;
+                  li {
+                    text-align: left;
+                  }
                 }
-              }
-              h4 {
-                font-weight: 600;
+                h4 {
+                  font-weight: 600;
+                }
               }
             `}
           >
@@ -77,10 +80,7 @@ export default () => (
               <h4>includes:</h4>
               <ul>
                 <li>
-                  standard pages (home, about, ...)
-                  <br />
-                  built by combining standard page-sections
-                  <br />(<i>patterns</i>) as building blocks.
+                  standard pages (home, about, ...) built by combining standard page-sections (<i>patterns</i>) as building blocks.
                 </li>
                 <li>
                   <i>blog</i> and post pages
@@ -126,11 +126,7 @@ export default () => (
                   <br />+<br />
                 </span>
                 <li>
-                  <i>custom</i> post items and pages
-                  <br />
-                  like. portfolio, gallery, ...
-                  <br />
-                  with <i>CMS</i>
+                  <i>custom</i> post items and pages like: portfolio, gallery, ... with <i>CMS</i>
                 </li>
                 <li>
                   custom <i>page designs</i>
@@ -168,11 +164,7 @@ export default () => (
               </span>
               <ul>
                 <li>
-                  special <i>features</i>
-                  <br />
-                  like: webshop, event registration, ...
-                  <br /> with corresponding <i>CMS</i>
-                  -features
+                  special <i>features</i> like: webshop, event registration, ... with corresponding <i>CMS</i>-features
                 </li>
                 <li>
                   <i>unique</i> designs

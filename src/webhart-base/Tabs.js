@@ -16,14 +16,15 @@ const TabButtons = styled.div`
   position: relative;
   z-index: 99;
   justify-content: center;
-  margin: 0 10px;
+  margin: ${rhythm()};
   ${mediaQuery[0]} {
     margin: 0 auto;
   }
+  width: calc(100% - (${rhythm()} * 2));
   max-width: 600px;
   border-radius: 300px;
   overflow: hidden;
-  padding: 4px;
+  padding: 4px !important;
   box-shadow: inset 0 0 8px black;
   background: ${gradients.darkBlue};
 `
@@ -51,7 +52,7 @@ const TabContent = styled.div`
   background: #eee;
   position: relative;
   z-index: 999;
-  padding: ${rhythm(1)};
+  padding: ${rhythm(1)} 0;
   margin: ${rhythm(1)} 0;
   *:last-child {
     margin-bottom: 0;
@@ -85,7 +86,7 @@ class Tabs extends Component {
             </TabButton>
           ))}
         </TabButtons>
-        <TabContent>{childrenWithProps}</TabContent>
+        <TabContent><Container>{childrenWithProps}</Container></TabContent>
       </TabsWrapper>
     )
   }

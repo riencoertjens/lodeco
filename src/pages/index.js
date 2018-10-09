@@ -50,7 +50,7 @@ const FeatureCardIconProps = {
   size: 60,
   className: css`
     box-shadow: inset 0 0 2px black;
-    margin: 10px;
+    margin: ${rhythm()};
     border-radius: 50%;
     padding: 10px;
     background: ${gradients.orange};
@@ -181,14 +181,14 @@ export default () => (
                   icon={<SpeedIcon {...FeatureCardIconProps} />}
                   backside="We live in a world of distraction. There’s nothing like the rush of a new notification. You want to grab your target’s attention before the next notification gets it."
                 >
-                  two seconds to get to stay
+                  two seconds to get people to stay
                 </Card>
                 <Card
                   className={CardStyle}
                   background={CardBackground}
                   title="responsive"
                   icon={<ResponsiveIcon {...FeatureCardIconProps} />}
-                  backside="Responsive development goes beyond looks. With more than half of the population on the internet on a mobile websites need to adapt to all sorts of devices. "
+                  backside="Responsive development goes beyond looks. With more than half of the online population using a mobile, websites need to adapt to all sorts of devices. "
                 >
                   the world lives in our pockets.
                 </Card>
@@ -208,7 +208,7 @@ export default () => (
                   background={CardBackground}
                   title="SEO"
                   icon={<SeoIcon {...FeatureCardIconProps} />}
-                  backside="Speed, responsivenes, and security are key in search engine optimisation. Getting your website ends up at the top of the stack ensures is the first step in getting across that first impression."
+                  backside="Speed, responsivenes, and security are key in search engine optimisation. Getting your website to the top of the stack is the step one in getting across that a good impression."
                 >
                   get to the front to of the line
                 </Card>

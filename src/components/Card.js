@@ -12,7 +12,6 @@ const CardStyle = props => css`
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: baseline;
   ${props.background};
 `
 
@@ -36,6 +35,11 @@ const Back = styled.div`
   width: calc(100% - ${rhythm(1 / 2)} * 2);
   height: calc(100% - ${rhythm(1 / 2)} * 2);
   transform: rotateY(-180deg);
+  justify-content: center;
+  p{
+    margin-bottom: 0;
+  }
+
   ${CardStyle};
   ${props =>
     props.flipped &&

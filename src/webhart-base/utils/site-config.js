@@ -29,8 +29,8 @@ const config = {
     name: base.name,
     short_name: base.shortName,
     start_url: '/',
-    // background_color: style.color.primaryBG,
-    // theme_color: style.color.primary,
+    background_color: base.primaryBgColor,
+    theme_color: base.primaryColor,
     display: 'minimal-ui',
     icon: 'static/images/favicon.png', // This path is relative to the root of the site.
   },

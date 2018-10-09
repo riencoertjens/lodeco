@@ -1,6 +1,13 @@
 import styled, { css } from 'react-emotion'
-import { mediaQueries, breakpoints, padding, colors } from './utils/style'
+import {
+  mediaQueries,
+  breakpoints,
+  padding,
+  colors,
+  gradients,
+} from './utils/style'
 import { rhythm } from './utils/typography'
+import GatsbyLink from 'gatsby-link'
 
 export const ContainerStyle = props =>
   css(
@@ -32,22 +39,40 @@ export const Section = styled.section`
 `
 
 export const ButtonStyle = props => css`
-  padding: 0 20px;
-  height: 35px;
-  line-height: 20px;
-  font-family: 'Raleway';
-  ${props.background
-    ? `border: none;`
-    : `border: 1px solid ${props.color || `white`};`} border-radius: 100px;
-  margin: 0 10px;
-  background: ${props.background || `transparent`};
-  color: ${props.color || `white`};
-  font-size: 12px;
+  border-radius: 1000px;
+  padding: ${rhythm(1 / 4)} ${rhythm(3 / 4)};
+  margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
+  text-decoration: none;
+  background: white;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
   font-weight: 200;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  &:hover {
+    box-shadow: none;
+  }
+  ${props.orange &&
+    `
+    background: ${gradients.orange};
+    border: none;
+    color: ${colors.darkBlue}
+  `};
+  ${props.dark &&
+    `
+    background: ${gradients.darkBlue};
+    border: none;
+    color: ${colors.orange}
+  `};
+  ${props.blue &&
+    `
+    background: ${gradients.lightBlue};
+    border: none;
+    color: ${colors.darkBlue}
+  `};
 `
 
 export const Button = styled('button')`
+  ${ButtonStyle};
+`
+export const LinkButton = styled(GatsbyLink)`
   ${ButtonStyle};
 `

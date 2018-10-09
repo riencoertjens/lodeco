@@ -31,9 +31,9 @@ export const colors = {
   orange: '#E67E00',
 }
 export const gradients = {
-  darkBlue: 'linear-gradient(135deg, #325f7a, #0f1e28), #1e3a4a',
-  lightBlue: 'linear-gradient(135deg, #00C1FF, #097AAD), #0599D1',
-  orange: 'linear-gradient(135deg, #FF8C00, #CF7100), #E67E00',
+  darkBlue: 'linear-gradient(135deg, #325f7a, #0f1e28)',
+  lightBlue: 'linear-gradient(135deg, #00C1FF, #097AAD)',
+  orange: 'linear-gradient(135deg, #FF8C00, #CF7100)',
 }
 export const sizing = {
   default: '16px',

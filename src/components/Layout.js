@@ -21,6 +21,9 @@ injectGlobal`
     color: ${colors.orange};
     background: rgba(255, 255, 255, 0.25);
   }
+  i {
+    color: ${colors.orange};
+  }
 `
 
 const AppWrapper = styled('div')``

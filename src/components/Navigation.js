@@ -101,12 +101,25 @@ class Navigation extends React.Component {
   render() {
     const { menuActive } = true //this.state
     return (
-      <nav active={menuActive}>
+      <nav
+        active={menuActive}
+        className={css`
+          a {
+            margin: 10px;
+          }
+        `}
+      >
         <Link to="/" key="nav-home">
           home
         </Link>
         <Link to="/about/" key="nav-about">
-          about
+          about me
+        </Link>
+        <Link to="/packages/" key="nav-packages">
+          packages
+        </Link>
+        <Link to="/features/" key="nav-features">
+          features
         </Link>
         <Link to="/work/" key="nav-work">
           work

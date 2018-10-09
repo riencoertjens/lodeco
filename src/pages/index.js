@@ -102,8 +102,6 @@ const IndexPage = props => (
           like to create top shelve websites tailored to your needs.
           <br />
           <Link to="/about">read more</Link>
-          <br />
-          <i>"first impressions last the longest"</i>
         </p>
       </Container>
     </Section>
@@ -177,8 +175,6 @@ const IndexPage = props => (
           like to create top shelve websites tailored to your needs.
           <br />
           <Link to="/about">read more</Link>
-          <br />
-          <i>"first impressions last the longest"</i>
         </p>
       </Container>
     </Section>
@@ -203,7 +199,7 @@ const IndexPage = props => (
     <Section>
       <Container>
         <h2>Some of my work</h2>
-        <i>"no better way to impress than with a tailor made suit"</i>
+
         <p>work work work</p>
       </Container>
     </Section>

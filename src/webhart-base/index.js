@@ -12,7 +12,7 @@ export const ContainerStyle = props =>
 
 export const Container = styled.div`
   ${ContainerStyle};
-  *:last-child {
+  & > *:last-child {
     margin-bottom: 0;
   }
   ${props => props.className};
@@ -26,7 +26,7 @@ export const Section = styled.section`
   }
   ${Container} {
     text-align: center;
-    max-width: 600px;
+    ${'' /* max-width: 600px; */};
   }
 `
 

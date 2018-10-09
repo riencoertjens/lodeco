@@ -4,11 +4,15 @@ import styled, { injectGlobal, css } from 'react-emotion'
 import PageTransition from '../webhart-base/PageTransition'
 
 import Nav from './Navigation'
-import { colors } from '../webhart-base/utils/style'
+import { colors, gradients } from '../webhart-base/utils/style'
 
 // Global style setup
 injectGlobal`
   box-sizing: border-size;
+  *::selection{
+    color: ${colors.orange};
+    background: ${colors.darkBlue};
+  }
   a{
     text-decoration-skip: objects;
     color: inherit;

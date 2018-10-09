@@ -1,43 +1,99 @@
 import React from 'react'
 import Hero from 'components/Hero'
-import GatsbyLink from 'gatsby-link'
-import { Container } from '../webhart-base'
+import Link from 'gatsby-link'
+import { Container, Section } from '../webhart-base'
+import Tabs, { Tab } from '../webhart-base/Tabs'
+import { css } from 'emotion'
 
 const AboutPage = props => (
   <React.Fragment>
-    <Hero gradient="orange">
-      <h1>Packages & services</h1>
+    <Hero gradient="darkBlue">
+      <h2>first impressions last the longest</h2>
     </Hero>
-    <section>
+    <Section>
       <Container>
-        <div>
-          <h2>packages</h2>
-          <p>
-            all websites are based on the same basics. Depending on your needs
-            there are different packages availeble.
-          </p>
-          <h3>pick your style</h3>
-          <p>
-            we use a basic site template is used and customised to match the
-            style of your existing brand. No nonsonse, no frills.
-          </p>
-          <h3>made to measure</h3>
-          <p>
-            a more advanced aproach, for those who need a specific design or
-            custom features like an advanced CMS, webshop, or registration
-            system.
-          </p>
-          <h3>tailor made</h3>
-          <p>fully custom</p>
+        <h1>packages</h1>
+        <p
+          className={css`
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          `}
+        >
+          all websites are based on the same foundations. Depending on your
+          requirements and needs there are different options available.
+          <br />
+          <i>"no better way to impress than with a tailor made suit"</i>
+        </p>
 
-          <h2>services</h2>
-          <h3>analytics + improvement</h3>
-          <h3>market research*</h3>
-          <h3>brand building*</h3>
-          <span>*created by or together with other proffessionals</span>
-        </div>
+        <Tabs>
+          <Tab name="made to measure">
+            <h3>Made to measure</h3>
+            <p>
+              A made to measure suit is cut and sewn using standard base size
+              patterns
+            </p>
+            <p>- € -</p>
+            <p>includes:</p>
+            <ul
+              className={css`
+                text-align: left;
+                margin: 0 auto;
+                display: inline-block;
+              `}
+            >
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+            </ul>
+          </Tab>
+          <Tab name="made to order">
+            <h3>Made to order</h3>
+            <p>
+              A made to order suit is created from standard patterns that are
+              sized based on specific requirements and measurements.
+            </p>
+            <p>- €€ -</p>
+            <p>includes:</p>
+            <ul
+              className={css`
+                text-align: left;
+                margin: 0 auto;
+                display: inline-block;
+              `}
+            >
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+            </ul>
+          </Tab>
+          <Tab name="fully bespoke">
+            <h3>Fully bespoke</h3>
+            <p>
+              A bespoke suit is made from scratch. Patterns are created based on
+              requirements and special requests, fitted, measured and refitted
+              until perfect
+            </p>
+            <p>- €€€ -</p>
+            <p>includes:</p>
+            <ul
+              className={css`
+                text-align: left;
+                margin: 0 auto;
+                display: inline-block;
+              `}
+            >
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+              <li>bla</li>
+            </ul>
+          </Tab>
+        </Tabs>
       </Container>
-    </section>
+    </Section>
   </React.Fragment>
 )
 

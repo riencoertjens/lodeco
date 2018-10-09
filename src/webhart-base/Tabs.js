@@ -5,6 +5,8 @@ import { rhythm } from '../webhart-base/utils/typography'
 
 const TabsWrapper = styled.div`
   position: relative;
+  margin: ${rhythm(1)} 0;
+  ${props => props.className};
 `
 
 const TabButtons = styled.div`
@@ -44,9 +46,8 @@ const TabContent = styled.div`
   background: #eee;
   position: relative;
   z-index: 999;
-  padding: ${rhythm(3 / 4)};
-  margin: ${rhythm(3 / 4)};
-  border-radius: 10px;
+  padding: ${rhythm(1)};
+  margin: ${rhythm(1)} 0;
   *:last-child {
     margin-bottom: 0;
   }
@@ -67,7 +68,7 @@ class Tabs extends Component {
       })
     )
     return (
-      <TabsWrapper>
+      <TabsWrapper className={this.props.className}>
         <TabButtons>
           {childrenWithProps.map((element, i) => (
             <TabButton

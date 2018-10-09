@@ -1,5 +1,6 @@
 import styled, { css } from 'react-emotion'
 import { mediaQueries, breakpoints, padding, colors } from './utils/style'
+import { rhythm } from './utils/typography'
 
 export const ContainerStyle = props =>
   css(
@@ -19,7 +20,7 @@ export const Container = styled.div`
 `
 
 export const Section = styled.section`
-  padding: 50px 0;
+  padding: ${rhythm(1)} 0;
   background: #eee;
   :nth-child(even) {
     background: #ddd;

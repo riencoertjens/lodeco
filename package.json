@@ -33,6 +33,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "gatsby-transformer-sharp": "next",
+    "jl-toolbox": "^0.9.2",
     "lodash": "^4.17.5",
     "moment": "^2.22.2",
     "netlify-cms": "^2.0.9",

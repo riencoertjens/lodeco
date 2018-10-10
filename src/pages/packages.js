@@ -156,6 +156,8 @@ export default () => (
                 based on requirements and special requests, fitted, measured and
                 refitted until perfect
               </p>
+              <p>- €€ -</p>
+              <h4>includes:</h4>
               <span>
                 <i>made to measure</i>
                 <br />+<br />

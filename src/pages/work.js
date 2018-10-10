@@ -13,6 +13,22 @@ export default () => (
             }
           }
         }
+        portfolio: allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "site" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                date
+                url
+                package
+                tags
+              }
+              html
+            }
+          }
+        }
       }
     `}
     render={data => (

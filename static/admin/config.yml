@@ -26,3 +26,46 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: image, label: Image, widget: image, required: false }
       - { name: body, labal: Content, widget: markdown }
+  - name: sites
+    label: Portfolio
+    label_singular: Site
+    folder: src/content/portfolio/
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    fields:
+      - {
+          name: templateKey,
+          label: Template Key,
+          widget: hidden,
+          default: site,
+        }
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: url, label: Link, widget: string }
+      - { name: tags, label: Tags, widget: list }
+      - {
+          name: package,
+          label: Service package,
+          widget: select,
+          options: ['made to measure', 'made to order', 'bespoke'],
+        }
+      - { name: image, label: Image, widget: image, required: false }
+      - {
+          name: preview-desktop,
+          label: Preview desktop,
+          widget: image,
+          required: false,
+        }
+      - {
+          name: preview-tablet,
+          label: Preview tablet,
+          widget: image,
+          required: false,
+        }
+      - {
+          name: preview-mobile,
+          label: Preview mobile,
+          widget: image,
+          required: false,
+        }
+      - { name: body, labal: Content, widget: markdown }

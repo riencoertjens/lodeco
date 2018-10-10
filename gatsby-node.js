@@ -50,19 +50,20 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(
-            `./src/components/page-templates/${
-              node.frontmatter.templateKey
-            }-template.js`
-          ),
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            slug: node.fields.slug,
-          },
-        })
+        node.frontmatter.templateKey == 'post' &&
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(
+              `./src/components/page-templates/${
+                node.frontmatter.templateKey
+              }-template.js`
+            ),
+            context: {
+              // Data passed to context is available
+              // in page queries as GraphQL variables.
+              slug: node.fields.slug,
+            },
+          })
       })
 
       resolve()

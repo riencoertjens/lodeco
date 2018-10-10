@@ -136,6 +136,13 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        headers: {
+          '/*': [
+            "Content-Security-Policy: frame-ancestors 'self' https://*.storyblok.com/",
+            'X-Frame-Options: ALLOW-FROM https://app.storyblok.com/',
+          ],
+        },
+        mergeSecurityHeaders: true,
       },
     },
     `gatsby-plugin-netlify`, //keep last

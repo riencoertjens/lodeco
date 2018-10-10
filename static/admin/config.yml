@@ -6,7 +6,7 @@ backend:
 media_folder: static/images
 public_folder: /images
 
-display_url: https://web-hart.com
+display_url: https://webhart-base.netlify.com
 
 collections:
   - name: posts

@@ -49,13 +49,7 @@ module.exports = {
         path: `${__dirname}/src/content/posts`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/content/portfolio`,
-      },
-    },
+
     //transform
     `gatsby-transformer-sharp`,
     {
@@ -136,15 +130,20 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        headers: {
-          '/*': [
-            "Content-Security-Policy: frame-ancestors 'self' https://*.storyblok.com/",
-            'X-Frame-Options: ALLOW-FROM https://app.storyblok.com/',
-          ],
-        },
-        mergeSecurityHeaders: true,
       },
     },
-    `gatsby-plugin-netlify`, //keep last
+    {
+      resolve: 'gatsby-plugin-netlify', //keep last
+      options: {
+        headers: {
+          '/*': [
+            // "Content-Security-Policy: frame-ancestors 'self' https://*.storyblok.com/",
+            // "X-Frame-Options: ALLOW-FROM https://app.storyblok.com/",
+            'X-Frame-Options: ALLOW-FROM *',
+          ],
+        },
+        mergeSecurityHeaders: false,
+      },
+    },
   ],
 }

@@ -5,8 +5,8 @@ const base = {
   url: `https://web-hart.netlify.com`, // no trailing slash!
   // url: `https://web-hart.com`,
   description: `site description Est dolore duis exercitation in quis excepteur culpa eu ut Lorem incididunt. Elit pariatur nostrud deserunt adipisicing voluptate commodo tempor ad. Sunt ut duis exercitation labore dolor excepteur dolore quis duis ut cillum minim. Fugiat Lorem deserunt ad in et minim tempor exercitation sint.`,
-  primaryColor: '#E67E00',
-  primaryBgColor: '#1e3a4a',
+  primaryColor: '#E30613',
+  primaryBgColor: '#5F5C4D',
 }
 
 const config = {

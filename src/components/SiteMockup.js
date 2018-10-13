@@ -83,8 +83,74 @@ const WebsiteWrap = props => (
   </WebsiteWrapper>
 )
 
-export default WebsiteWrap
+const Phone = props => <WebsiteWrap {...props} phone />
+const Tablet = props => <WebsiteWrap {...props} tablet />
+const Desktop = props => <WebsiteWrap {...props} desktop />
 
-export const Phone = props => <WebsiteWrap {...props} phone />
-export const Tablet = props => <WebsiteWrap {...props} tablet />
-export const Desktop = props => <WebsiteWrap {...props} desktop />
+export class SyncedDevices extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { width: 0 }
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions()
+    window.addEventListener('resize', this.updateWindowDimensions)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions)
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth })
+  }
+  render() {
+    const { site } = this.props
+    const { width } = this.state
+    const scale = width / 3200
+    const translateX = -(3200 / scale) / 2 + 3200 / 2
+    const translateY = -(1325 / scale) / 2 + 1325 / 2
+
+    return (
+      <div
+        className={css`
+          transform: scale(${scale}) translate(${translateX}px, ${translateY}px);
+          margin: 0 auto ${translateY}px;
+          perspective: 2500px;
+          display: flex;
+          align-items: center;
+          width: 3200px;
+          justify-content: center;
+          & > * {
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin: 0 30px;
+          }
+        `}
+      >
+        <Tablet
+          site={site}
+          className={css`
+            transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
+          `}
+        />
+        <Desktop
+          site={site}
+          className={css`
+            transform: rotateX(0deg) rotateY(0) rotateZ(0deg);
+          `}
+        />
+        <Phone
+          site={site}
+          className={css`
+            transform: rotateX(0deg) rotateY(-45deg) rotateZ(0deg);
+          `}
+        />
+      </div>
+    )
+  }
+}
+
+export default { Phone, Tablet, Desktop, SyncedDevices, WebsiteWrap }

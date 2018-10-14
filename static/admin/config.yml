@@ -22,7 +22,7 @@ collections:
           widget: hidden,
           default: leverancier,
         }
-      - { name: title, label: Title, widget: string }
+      - { name: name, label: Name, widget: string }
       - { name: site, label: Site, widget: string }
       - { name: featured, label: Uitgelicht, widget: boolean, default: true }
       - { name: image, label: Image, widget: image, required: false }

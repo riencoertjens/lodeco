@@ -1,5 +1,5 @@
 ---
-name: breydel
+title: breydel
 site: www.breydel.be
 image: /images/breydel.png
 featured: true

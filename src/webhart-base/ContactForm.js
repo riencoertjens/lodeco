@@ -141,7 +141,7 @@ class ContactForm extends React.Component {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="/"
+        action="#"
         // onSubmit={this.handleSubmit}
         className={css`
           display: flex;
@@ -181,7 +181,6 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
         </FormItem>
-        <input type="submit" />
         <Button type="submit" isDisabled={ready !== true}>
           Verzend
         </Button>

@@ -15,8 +15,8 @@ const config = {
   siteTitle: ` ${base.name} | ${base.tagline}`,
   siteTitlePostfix: ` | ${base.name}`,
   siteDescription: base.description,
-  siteImage: `preview.jpg`,
-  siteLanguage: `en`,
+  siteImage: `logo.png`,
+  siteLanguage: `nl`,
 
   /* site header */
   headerTitle: `${base.name}`,

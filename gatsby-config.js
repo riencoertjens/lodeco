@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: `%s${config.siteTitlePostfix}`,
     description: config.siteDescription,
     url: config.siteUrl, // no trailing slash!
-    image: '/images/site-image.jpg',
+    image: config.siteImage,
     owner: 'WEBhart',
     twitterUsername: '@riencoertjens',
     facebookAppID: '',

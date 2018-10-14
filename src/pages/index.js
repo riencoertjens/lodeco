@@ -29,6 +29,8 @@ import {
 import styled, { css } from 'react-emotion'
 
 import Logo from '../../static/images/logo.svg'
+import StampVers from '../../static/images/stamp1.svg'
+import StampGratis from '../../static/images/stamp2.svg'
 
 const ColumnImageStyle = css`
   border: 1px solid white;
@@ -177,7 +179,26 @@ class IndexPage extends React.Component {
                   width: 100%;
                 `}
               >
-                <h1>Elke dag met zorg gebracht</h1>
+                <h1
+                  className={css`
+                    position: relative;
+                    display: inline-block;
+                  `}
+                >
+                  <img
+                    src={StampVers}
+                    alt="50 jaar vers"
+                    className={css`
+                      position: absolute;
+                      ${mediaQueries({
+                        top: ['-70px', '-60px', '-60px'],
+                        left: ['0', '0', '-70px'],
+                      })} z-index: 9999;
+                      margin: 0;
+                    `}
+                  />
+                  Elke dag met zorg gebracht
+                </h1>
                 <p>
                   voor slagers, bakkers, delicatessenzaken, broodjeszaken,
                   tavernes, zorgcentra en rusthuizen
@@ -285,7 +306,22 @@ class IndexPage extends React.Component {
                       ons aanbod
                     </LinkButton>
                   </Column>
-                  <Column>
+                  <Column
+                    className={css`
+                      position: relative;
+                    `}
+                  >
+                    <img
+                      src={StampGratis}
+                      alt="gratis starterspakket"
+                      className={css`
+                        position: absolute;
+                        top: 0;
+                        right: 50%;
+                        margin-right: -80px;
+                        z-index: 9999;
+                      `}
+                    />
                     <Image
                       alt="starters"
                       fluid={data.advies.childImageSharp.fluid}
@@ -502,7 +538,7 @@ class IndexPage extends React.Component {
                     align-items: center;
                     ${this.state.showSuppliers &&
                       `
-                            height: ${24 * data.leveranciers.edges.length}px;
+                        height: ${24 * data.leveranciers.edges.length}px;
                     `};
                   `}
                 >

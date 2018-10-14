@@ -1,8 +1,7 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import { Button } from '.'
 
-import { colors } from './utils/style'
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -29,6 +28,7 @@ const FormItem = styled.label`
     padding: 5px;
     background: transparent;
     border: none;
+    color: white;
     background: rgba(0, 0, 0, 0.25);
     &:hover {
       background: rgba(0, 0, 0, 0.5);
@@ -98,6 +98,13 @@ class ContactForm extends React.Component {
         message: this.state.message.value,
         'form-name': e.target['form-name'].value,
       }
+      console.log(
+        JSON.stringify({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode(data),
+        })
+      )
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -140,7 +147,7 @@ class ContactForm extends React.Component {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={this.handleSubmit}
+        // onSubmit={this.handleSubmit}
       >
         <noscript>activate javascript to use this form</noscript>
         <input type="hidden" name="bot-field" />
@@ -173,7 +180,7 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
         </FormItem>
-        <div data-netlify-recaptcha />
+
         <Button type="submit" isDisabled={ready !== true}>
           Verzend
         </Button>

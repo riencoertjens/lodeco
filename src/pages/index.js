@@ -5,7 +5,10 @@ import Image from 'gatsby-image'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Obfuscate from 'react-obfuscate'
+
 import Hero from 'components/Hero'
+import ContactForm from 'webhart-base/ContactForm'
 import {
   Container,
   Section,
@@ -21,8 +24,11 @@ import {
   mediaQuery,
   mediaQueryGT,
   mediaQueryLT,
+  mediaQueries,
 } from '../webhart-base/utils/style'
 import styled, { css } from 'react-emotion'
+
+import Logo from '../../static/images/logo.svg'
 
 const ColumnImageStyle = css`
   border: 1px solid white;
@@ -191,6 +197,10 @@ class IndexPage extends React.Component {
                 <Columns
                   columnBase="300px"
                   className={css`
+                  ${mediaQueries({
+                    alignItems: ['center', 'center', 'stretch'],
+                    flexDirection: ['column', 'column', 'row'],
+                  })};
                     p {
                       color: ${colors.grey2};
                       font-size: 14px;
@@ -273,9 +283,9 @@ class IndexPage extends React.Component {
               <Container>
                 <h2>Kazen en bereide gerechten</h2>
                 <Columns
-                  columnBase="300px"
                   className={css`
                     margin-bottom: ${rhythm()};
+
                     p {
                       color: ${colors.grey2};
                       font-size: 14px;
@@ -290,7 +300,7 @@ class IndexPage extends React.Component {
                 >
                   <Column>
                     <Image
-                      fluid={data.voorverpakt.childImageSharp.fluid}
+                      fluid={data.kazen.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
                     <div>
@@ -305,7 +315,7 @@ class IndexPage extends React.Component {
 
                   <Column>
                     <Image
-                      fluid={data.advies.childImageSharp.fluid}
+                      fluid={data.gerechten.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
                     <div>
@@ -373,7 +383,7 @@ class IndexPage extends React.Component {
                       display: flex;
                       flex-wrap: wrap;
                       align-items: center;
-                      justify-content: space-around;
+                      justify-content: space-evenly;
                     `}
                   >
                     {data.featuredLeveranciers.edges.map(({ node }, i) => (
@@ -442,44 +452,92 @@ class IndexPage extends React.Component {
               </Container>
             </Section>
             <Section
-              as="footer"
+              withComponent="footer"
               className={css`
                 background: #404040;
                 color: white;
+                padding: 0;
               `}
             >
-              <Columns columnBase="500px">
-                <Column>
-                  <p>
-                    Een familiezaak met 50 jaar ervaring. Groothandel met
-                    persoonlijke service en kwaliteitsproducten. Gericht op de
-                    kleinhandel die zich wil onderscheiden.
-                  </p>
-                  <span>
-                    Maasstraat 38, 2060 Antwerpen
-                    <br />
-                    tel 03/234.12.66, fax 03/234.12.72
-                    <br />
-                    mich.lodeco@scarlet.be
-                    <br />
-                  </span>
-                </Column>
-                <Column>
-                  <p>
-                    Een familiezaak met 50 jaar ervaring. Groothandel met
-                    persoonlijke service en kwaliteitsproducten. Gericht op de
-                    kleinhandel die zich wil onderscheiden.
-                  </p>
-                  <span>
-                    Maasstraat 38, 2060 Antwerpen
-                    <br />
-                    tel 03/234.12.66, fax 03/234.12.72
-                    <br />
-                    mich.lodeco@scarlet.be
-                    <br />
-                  </span>
-                </Column>
-              </Columns>
+              <Container>
+                <Columns
+                  className={css`
+                    text-align: left;
+                  `}
+                >
+                  <Column
+                    className={css`
+                      flex: 1 1 350px;
+                      padding: 150px ${rhythm(2)} ${rhythm(2)};
+                      position: relative;
+                      &&& {
+                        align-items: flex-start;
+                        justify-content: space-between;
+                      }
+                    `}
+                  >
+                    <img
+                      className={css`
+                        position: absolute;
+                        top: 0;
+                        width: 200px;
+                      `}
+                      src={Logo}
+                    />
+                    <p>
+                      Een familiezaak met 50 jaar ervaring. Groothandel met
+                      persoonlijke service en kwaliteitsproducten. Gericht op de
+                      kleinhandel die zich wil onderscheiden.
+                    </p>
+                    <p
+                      className={css`
+                        margin: 0;
+                        font-size: ${rhythm(1 / 2)};
+                      `}
+                    >
+                      <OutboundLink
+                        href="https://goo.gl/maps/DK9KkEx3bJM2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Maasstraat 38, 2060 Antwerpen
+                      </OutboundLink>
+                      <br />
+                      tel{' '}
+                      <Obfuscate tel="(+32)03/234.12.66">
+                        03/234.12.66
+                      </Obfuscate>{' '}
+                      fax{' '}
+                      <Obfuscate tel="(+32)03/234.12.72">
+                        03/234.12.72
+                      </Obfuscate>
+                      <br />
+                      <Obfuscate
+                        email="mich.lodeco@scarlet.be"
+                        headers={{
+                          subject: 'website contact',
+                        }}
+                      >
+                        mich.lodeco@scarlet.be
+                      </Obfuscate>
+                      <br />
+                    </p>
+                  </Column>
+                  <Column
+                    className={css`
+                      && {
+                        flex: 1 1 500px;
+                        position: relative;
+                        padding: ${rhythm(2)};
+                        align-items: stretch;
+                      }
+                    `}
+                  >
+                    <h3>verstuur bericht</h3>
+                    <ContactForm name="contact-form" />
+                  </Column>
+                </Columns>
+              </Container>
             </Section>
           </React.Fragment>
         )}

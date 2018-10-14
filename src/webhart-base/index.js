@@ -93,11 +93,8 @@ export const LinkButton = styled(GatsbyLink)`
 
 export const Columns = styled('div')`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  ${mediaQueries({
-    alignItems: ['center', 'center', 'stretch'],
-    flexDirection: ['column', 'column', 'row'],
-  })};
 `
 export const Column = styled('div')`
   padding: ${rhythm(1 / 2)};

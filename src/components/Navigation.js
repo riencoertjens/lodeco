@@ -87,7 +87,6 @@ class Navigation extends React.Component {
           className={css`
             && {
               padding: 0;
-              margin-top: -7px;
               transition: 0.3s;
               width: 300px;
               &:hover {

@@ -40,7 +40,6 @@ class Navigation extends React.Component {
 
   render() {
     const { scrolled, menuActive } = this.state
-    console.log(menuActive)
 
     return (
       <>
@@ -200,7 +199,7 @@ class Navigation extends React.Component {
               && {
                 padding: 0;
                 transition: 0.3s;
-                flex: 0 1 300px;
+                flex: 0 1 auto;
                 width: 300px;
                 &:hover {
                   background: white;

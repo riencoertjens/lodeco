@@ -1,6 +1,5 @@
 import React from 'react'
 import { css } from 'react-emotion'
-import LogoSVG from '../../static/images/Logo'
 import { Container } from '../webhart-base'
 import GatsbyImage from 'gatsby-image'
 import { rhythm } from '../webhart-base/utils/style'
@@ -12,15 +11,14 @@ const Hero = props => {
       className={css`
         text-shadow: 1px 1px 0 white;
         width: 100vw;
-        height: calc(100vh);
+        height: 100vh;
         padding-top: 40px;
         position: relative;
         h1,
         h2 {
           margin: ${rhythm()};
-          margin-top: 170px;
+          margin-top: 190px;
           font-size: 45px;
-          /* width: 100%; */
           text-align: 'center';
         }
         p {

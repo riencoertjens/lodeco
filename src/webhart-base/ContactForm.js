@@ -22,7 +22,7 @@ const FormItem = styled.label`
   align-items: center;
   span {
     margin-right: 5px;
-    width: 75px;
+    width: 55px;
   }
   input,
   textarea {

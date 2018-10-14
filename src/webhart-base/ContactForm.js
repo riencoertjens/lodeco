@@ -125,13 +125,7 @@ class ContactForm extends React.Component {
         promofolder: this.state.promofolder.value,
         'form-name': e.target['form-name'].value,
       }
-      console.log(
-        JSON.stringify({
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: encode(data),
-        })
-      )
+
       fetch('/?no-cache=1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -147,18 +141,19 @@ class ContactForm extends React.Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = ({ target }) => {
+    const value = target.type === 'checkbox' ? target.checked : target.value
     const newState = {
       ...this.state,
-      [e.target.name]: {
-        valid: validate(e.target.name, e.target.value),
-        value: e.target.value,
+      [target.name]: {
+        valid: validate(target.name, value),
+        value: value,
       },
     }
     this.setState({
-      [e.target.name]: {
-        valid: validate(e.target.name, e.target.value),
-        value: e.target.value,
+      [target.name]: {
+        valid: validate(target.name, value),
+        value: value,
       },
       ready:
         newState.name.valid && newState.message.valid && newState.email.valid,
@@ -223,14 +218,20 @@ class ContactForm extends React.Component {
           />
         </FormItem>
         <FormItem checkbox="true">
-          <input type="checkbox" name="starter" value={starter.value} />
+          <input
+            type="checkbox"
+            name="starter"
+            checked={starter.value}
+            onChange={this.handleChange}
+          />
           ik wil starten, stuur mij een gratis starterspakket
         </FormItem>
         <FormItem checkbox="true">
           <input
             type="checkbox"
             name="delicatessezaak"
-            value={delicatessezaak.value}
+            checked={delicatessezaak.value}
+            onChange={this.handleChange}
           />
           meer info over aanbod voor delicatessezaken
         </FormItem>
@@ -238,12 +239,18 @@ class ContactForm extends React.Component {
           <input
             type="checkbox"
             name="broodjeszaak"
-            value={broodjeszaak.value}
+            checked={broodjeszaak.value}
+            onChange={this.handleChange}
           />
           meer info over aanbod voor broodjeszaken
         </FormItem>
         <FormItem checkbox="true">
-          <input type="checkbox" name="promofolder" value={promofolder.value} />
+          <input
+            type="checkbox"
+            name="promofolder"
+            checked={promofolder.value}
+            onChange={this.handleChange}
+          />
           hou mij op de hoogte van de promoties, bezorg mij de promotiefolder
         </FormItem>
         <Button type="submit" isDisabled={ready !== true}>

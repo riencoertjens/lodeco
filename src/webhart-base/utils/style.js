@@ -39,7 +39,7 @@ export const colors = {
   primary: config.base.primaryColor,
   primaryBG: config.base.primaryBgColor,
   grey1: '#bdbdbd',
-  grey2: '#C2C2BF',
+  grey2: 'whitesmoke',
 }
 
 export const sizing = {

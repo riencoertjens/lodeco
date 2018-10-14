@@ -210,7 +210,7 @@ class IndexPage extends React.Component {
                 <p
                   className={css`
                     font-weight: 300;
-                    color: ${colors.grey1};
+                    color: whitesmoke;
                     font-size: ${rhythm(3 / 4)};
                   `}
                 >
@@ -382,7 +382,7 @@ class IndexPage extends React.Component {
               className={css`
                 background: #bfbeb8;
                 h2 {
-                  color: white;
+                  color: black;//${colors.primaryBG};
                 }
               `}
             >

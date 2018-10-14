@@ -1,10 +1,10 @@
 const base = {
-  name: `Website name`,
-  shortName: `shortname`,
-  tagline: `Non laborum ex anim duis velit ullamco.`,
-  url: `https://web-hart.netlify.com`, // no trailing slash!
+  name: `Lodeco Eeckhout`,
+  shortName: `Lodeco`,
+  tagline: `Specifiek aanbod voor slagers, delicatessenzaken, broodjeszaken en horeca`,
+  url: `https://www.lodeco-eeckhout.com`, // no trailing slash!
   // url: `https://web-hart.com`,
-  description: `site description Est dolore duis exercitation in quis excepteur culpa eu ut Lorem incididunt. Elit pariatur nostrud deserunt adipisicing voluptate commodo tempor ad. Sunt ut duis exercitation labore dolor excepteur dolore quis duis ut cillum minim. Fugiat Lorem deserunt ad in et minim tempor exercitation sint.`,
+  description: `Specifiek aanbod voor slagers, delicatessenzaken, broodjeszaken en horeca. Vooral broodbeleg, zoals fijne vleeswaren, kazen, en salades. Maar ook bereide gerechten en tapas, of exclusieve gerookte, gedroogde of gekookte specialiteiten. Met onze eigen import en persoonlijke service mag u rekenen op een zeer individuele ondersteuning.`,
   primaryColor: '#E30613',
   primaryBgColor: '#5F5C4D',
 }
@@ -12,8 +12,8 @@ const base = {
 const config = {
   /* meta tags */
   base: base,
-  siteTitle: ` ${base.name} ❤️ ${base.tagline}`,
-  siteTitlePostfix: ` ❤️ ${base.name}`,
+  siteTitle: ` ${base.name} | ${base.tagline}`,
+  siteTitlePostfix: ` | ${base.name}`,
   siteDescription: base.description,
   siteImage: `preview.jpg`,
   siteLanguage: `en`,

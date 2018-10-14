@@ -98,6 +98,13 @@ class IndexPage extends React.Component {
                 }
               }
             }
+            aanbiedingen: file(base: { eq: "aanbiedingen.jpg" }) {
+              childImageSharp {
+                fluid(maxWidth: 350) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             featuredLeveranciers: allMarkdownRemark(
               filter: {
                 frontmatter: {
@@ -357,6 +364,17 @@ class IndexPage extends React.Component {
                   <br />
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
                 </p>
+                <Link
+                  className={css`
+                    width: 100%;
+                    max-width: 350px;
+                    display: block;
+                    margin: ${rhythm()} auto;
+                  `}
+                >
+                  <Image fluid={data.aanbiedingen.childImageSharp.fluid} />
+                </Link>
+                <LinkButton href="/#contact">blijf op de hoogte</LinkButton>
               </Container>
             </Section>
             <Section
@@ -452,6 +470,7 @@ class IndexPage extends React.Component {
               </Container>
             </Section>
             <Section
+              name="contact"
               withComponent="footer"
               className={css`
                 background: #404040;

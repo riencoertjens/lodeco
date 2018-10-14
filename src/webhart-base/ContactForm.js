@@ -99,7 +99,7 @@ class ContactForm extends React.Component {
           body: encode(data),
         })
       )
-      fetch('/', {
+      fetch('/?no-cache=1', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode(data),
@@ -142,7 +142,7 @@ class ContactForm extends React.Component {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         action="#"
-        // onSubmit={this.handleSubmit}
+        onSubmit={this.handleSubmit}
         className={css`
           display: flex;
           flex-direction: column;

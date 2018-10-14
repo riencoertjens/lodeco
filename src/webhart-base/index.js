@@ -4,7 +4,7 @@ import {
   breakpoints,
   padding,
   colors,
-  gradients,
+  mediaQueryGT,
 } from './utils/style'
 import { rhythm } from './utils/style'
 import GatsbyLink from 'gatsby-link'
@@ -27,47 +27,61 @@ export const Container = styled.div`
 `
 
 export const Section = styled.section`
-  padding: ${rhythm(1)} 0;
+  padding: ${rhythm(2)} 0;
   background: #eee;
-  :nth-child(even) {
-    background: #ddd;
-  }
   ${Container} {
     text-align: center;
-    ${'' /* max-width: 600px; */};
   }
+  ${props =>
+    props.background &&
+    `
+    background: ${props.background};
+  `};
 `
 
 export const ButtonStyle = props => css`
-  border-radius: 1000px;
-  padding: ${rhythm(1 / 4)} ${rhythm(3 / 4)};
+  padding: ${rhythm(1 / 2)} ${rhythm(1)};
   margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
+  font-size: 13px;
+  ${props.large &&
+    `
+    padding: ${rhythm(1 / 2)} ${rhythm(2)};
+    margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
+    font-size: 16px;
+  `};
   text-decoration: none;
   background: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   display: inline-block;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
-  font-weight: 200;
+  border: none;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  transition: 0.3s;
   &:hover {
-    box-shadow: none;
+    ${props.clear
+      ? `
+        background: black;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+        border-color: black;
+    `
+      : `
+        opacity: 0.75;
+      `};
   }
-  ${props.orange &&
+  ${props.black &&
     `
-    background: ${gradients.orange};
-    border: none;
-    color: ${colors.darkBlue}
+    background: black; color: white
   `};
-  ${props.dark &&
+  ${props.clear &&
     `
-    background: ${gradients.darkBlue};
-    border: none;
-    color: ${colors.orange}
-  `};
-  ${props.blue &&
-    `
-    background: ${gradients.lightBlue};
-    border: none;
-    color: ${colors.darkBlue}
-  `};
+      box-shadow: none;
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+
+    `};
 `
 
 export const Button = styled('button')`
@@ -75,4 +89,26 @@ export const Button = styled('button')`
 `
 export const LinkButton = styled(GatsbyLink)`
   ${ButtonStyle};
+`
+
+export const Columns = styled('div')`
+  display: flex;
+  justify-content: center;
+  ${mediaQueries({
+    alignItems: ['center', 'center', 'stretch'],
+    flexDirection: ['column', 'column', 'row'],
+  })};
+`
+export const Column = styled('div')`
+  padding: ${rhythm(1 / 2)};
+  flex: 0 1 300px;
+  ${mediaQueryGT['tablet']} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button,
+    a {
+      margin: auto 0;
+    }
+  }
 `

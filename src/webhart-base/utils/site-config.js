@@ -11,6 +11,7 @@ const base = {
 
 const config = {
   /* meta tags */
+  base: base,
   siteTitle: ` ${base.name} ❤️ ${base.tagline}`,
   siteTitlePostfix: ` ❤️ ${base.name}`,
   siteDescription: base.description,

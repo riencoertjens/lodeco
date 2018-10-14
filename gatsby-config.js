@@ -49,6 +49,13 @@ module.exports = {
         path: `${__dirname}/src/content/posts`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `leveranciers`,
+        path: `${__dirname}/src/content/leveranciers`,
+      },
+    },
 
     //transform
     `gatsby-transformer-sharp`,

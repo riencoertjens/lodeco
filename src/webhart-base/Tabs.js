@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled, { css } from 'react-emotion'
-import { gradients, colors, mediaQuery } from '../webhart-base/utils/style'
+import { colors, mediaQuery } from '../webhart-base/utils/style'
 import { rhythm } from '../webhart-base/utils/style'
 import { Container } from '.'
 
@@ -9,43 +9,6 @@ const TabsWrapper = styled.div`
   padding: ${rhythm(1)} 0;
   ${props => props.className};
   text-align: center;
-`
-
-const TabButtons = styled.div`
-  display: flex;
-  position: relative;
-  z-index: 99;
-  justify-content: center;
-  margin: ${rhythm()};
-  ${mediaQuery[0]} {
-    margin: 0 auto;
-  }
-  width: calc(100% - (${rhythm()} * 2));
-  max-width: 600px;
-  border-radius: 300px;
-  overflow: hidden;
-  padding: 4px !important;
-  box-shadow: inset 0 0 8px black;
-  background: ${gradients.darkBlue};
-`
-
-const TabButton = styled.button`
-  flex: 0 1 200px;
-  background: none;
-  cursor: pointer;
-  border-radius: 300px;
-  outline: 0;
-  font-weight: 200;
-  border: none;
-  color: ${colors.orange};
-  ${props =>
-    props.active &&
-    `
-    color: ${colors.darkBlue};
-    background: ${gradients.orange};
-    ${'' /* border: 1px solid #fff; */}
-    box-shadow: 0 0 7px -1px black, inset 0 0 2px black;
-  `};
 `
 
 const TabContent = styled.div`

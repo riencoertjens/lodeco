@@ -49,10 +49,8 @@
     "react-transition-group": "^2.5.0",
     "react-typography": "^0.16.13",
     "regenerator-runtime": "^0.12.1",
-    "typeface-karla": "^0.0.54",
-    "typeface-lato": "^0.0.54",
-    "typeface-poppins": "^0.0.54",
-    "typeface-roboto-mono": "^0.0.54",
+    "typeface-roboto": "^0.0.54",
+    "typeface-roboto-slab": "^0.0.54",
     "typography": "^0.16.17"
   },
   "keywords": [

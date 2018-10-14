@@ -4,13 +4,23 @@ import { keyframes } from 'emotion'
 
 import Typography from 'typography'
 
+export const baseFonts = {
+  serif: ['Roboto slab', 'serif'],
+  sansSerif: ['Roboto', 'sans-serif'],
+}
+export const fonts = {
+  serif: baseFonts.serif.join(', '),
+  sansSerif: baseFonts.sansSerif.join(', '),
+  primary: baseFonts.serif.join(', '),
+}
+
 export const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   bodyWeight: '400',
   baseLineHeight: 1.5,
-  headerFontFamily: ['Poppins', 'sans-serif'],
+  headerFontFamily: baseFonts.serif,
   headerWeight: 'normal',
-  bodyFontFamily: ['Poppins', 'sans-serif'],
+  bodyFontFamily: baseFonts.sansSerif,
   overrideThemeStyles: () => ({
     h1: {
       fontWeight: '500',
@@ -26,18 +36,12 @@ export const typography = new Typography({
 export const { scale, rhythm, options } = typography
 
 export const colors = {
-  primary: config.primaryColor,
-  primaryBG: config.primaryBgColor,
+  primary: config.base.primaryColor,
+  primaryBG: config.base.primaryBgColor,
+  grey1: '#bdbdbd',
+  grey2: '#C2C2BF',
+}
 
-  darkBlue: '#1e3a4a',
-  lightBlue: '#0599D1',
-  orange: '#E67E00',
-}
-export const gradients = {
-  darkBlue: 'linear-gradient(135deg, #325f7a, #0f1e28)',
-  lightBlue: 'linear-gradient(135deg, #00C1FF, #097AAD)',
-  orange: 'linear-gradient(135deg, #FF8C00, #CF7100)',
-}
 export const sizing = {
   default: '16px',
   large: '18px',
@@ -77,21 +81,34 @@ export const breakpoints = {
 
 export const mediaQuery = bps.map(bp => `@media (min-width: ${bp})`)
 
+export const mediaQueryGT = {
+  mobile: `@media (min-width: ${bps[0]})`,
+  tablet: `@media (min-width: ${bps[1]})`,
+  desktop: `@media (min-width: ${bps[2]})`,
+  wideScreen: `@media (min-width: ${bps[3]})`,
+}
+export const mediaQueryLT = {
+  mobile: `@media (max-width: ${bps[0]})`,
+  tablet: `@media (max-width: ${bps[1]})`,
+  desktop: `@media (max-width: ${bps[2]})`,
+  wideScreen: `@media (max-width: ${bps[3]})`,
+}
+
 const paddingY = '0'
 
 export const padding = {
-  normal: [`${paddingY} ${rhythm(1/2)}`, `${paddingY} 0`],
+  normal: [`${paddingY} ${rhythm(1 / 2)}`, `${paddingY} 0`],
   wide: [
-    `${paddingY} ${rhythm(1/2)}`,
-    `${paddingY} ${rhythm(1/2)}`,
-    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
     `${paddingY} 0`,
   ],
   superWide: [
-    `${paddingY} ${rhythm(1/2)}`,
-    `${paddingY} ${rhythm(1/2)}`,
-    `${paddingY} ${rhythm(1/2)}`,
-    `${paddingY} ${rhythm(1/2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
+    `${paddingY} ${rhythm(1 / 2)}`,
     `${paddingY} 0`,
   ],
 }
@@ -102,10 +119,6 @@ export const mediaQueries = facepaint(
   })
 )
 
-export const font = {
-  primary: 'sans-serif',
-}
-
 export default {
   colors,
   sizing,
@@ -114,6 +127,8 @@ export default {
   breakpoints,
   padding,
   mediaQueries,
-  font,
-  gradients,
+  mediaQuery,
+  mediaQueryGT,
+  mediaQueryLT,
+  fonts,
 }

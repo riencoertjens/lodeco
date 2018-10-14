@@ -242,6 +242,7 @@ class IndexPage extends React.Component {
                 >
                   <Column>
                     <Image
+                      alt="charcuterie"
                       fluid={data.voorverpakt.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
@@ -261,6 +262,7 @@ class IndexPage extends React.Component {
                   </Column>
                   <Column>
                     <Image
+                      alt="slager"
                       fluid={data.zaken.childImageSharp.fluid}
                       className={css`
                         ${ColumnImageStyle};
@@ -285,6 +287,7 @@ class IndexPage extends React.Component {
                   </Column>
                   <Column>
                     <Image
+                      alt="starters"
                       fluid={data.advies.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
@@ -332,6 +335,7 @@ class IndexPage extends React.Component {
                 >
                   <Column>
                     <Image
+                      alt="kazen"
                       fluid={data.kazen.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
@@ -349,6 +353,7 @@ class IndexPage extends React.Component {
 
                   <Column>
                     <Image
+                      alt="gerechten"
                       fluid={data.gerechten.childImageSharp.fluid}
                       className={ColumnImageStyle}
                     />
@@ -411,6 +416,7 @@ class IndexPage extends React.Component {
                     `}
                   >
                     <Image
+                      alt="deliflash magazine"
                       fluid={
                         data.deliflash.edges[0].node.frontmatter.image
                           .childImageSharp.fluid

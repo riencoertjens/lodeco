@@ -96,6 +96,7 @@ class Navigation extends React.Component {
           <Link
             to="/"
             key="nav-home"
+            aria-label="home"
             className={css`
               && {
                 padding: 0;
@@ -112,7 +113,7 @@ class Navigation extends React.Component {
               }
             `}
           >
-            <img src={Logo} />
+            <img alt="logo" src={Logo} />
           </Link>
           <Hamburger
             active={menuActive}
@@ -195,6 +196,7 @@ class Navigation extends React.Component {
           <Link
             to="/"
             key="nav-home"
+            aria-label="home"
             className={css`
               && {
                 padding: 0;
@@ -211,7 +213,7 @@ class Navigation extends React.Component {
               }
             `}
           >
-            <img src={Logo} />
+            <img alt="logo" src={Logo} />
           </Link>
           <Link to="/#promoties" key="nav-promoties">
             promoties

@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled, { injectGlobal, css } from 'react-emotion'
 import PageTransition from '../webhart-base/PageTransition'
+import SEO from '../webhart-base/SEO'
 
 import 'typeface-roboto'
 import 'typeface-roboto-slab'
@@ -42,7 +43,7 @@ const Layout = ({ element, props }) => (
     <Helmet key="app-head">
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Helmet>
-
+    <SEO />
     <React.Fragment key="app-content">
       <Nav />
       <AppWrapper {...props}>{element}</AppWrapper>

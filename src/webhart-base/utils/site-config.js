@@ -2,8 +2,8 @@ const base = {
   name: `Lodeco Eeckhout`,
   shortName: `Lodeco`,
   tagline: `Specifiek aanbod voor slagers, delicatessenzaken, broodjeszaken en horeca`,
-  url: `https://www.lodeco-eeckhout.com`, // no trailing slash!
-  // url: `https://web-hart.com`,
+  // url: `https://www.lodeco-eeckhout.be`, // no trailing slash!
+  url: `https://lodeco.netlif.com`, // no trailing slash!
   description: `Specifiek aanbod voor slagers, delicatessenzaken, broodjeszaken en horeca. Vooral broodbeleg, zoals fijne vleeswaren, kazen, en salades. Maar ook bereide gerechten en tapas, of exclusieve gerookte, gedroogde of gekookte specialiteiten. Met onze eigen import en persoonlijke service mag u rekenen op een zeer individuele ondersteuning.`,
   primaryColor: '#E30613',
   primaryBgColor: '#5F5C4D',

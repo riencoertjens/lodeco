@@ -554,6 +554,7 @@ class IndexPage extends React.Component {
                         width: 200px;
                       `}
                       src={Logo}
+                      alt="logo"
                     />
                     <p>
                       Een familiezaak met 50 jaar ervaring. Groothandel met

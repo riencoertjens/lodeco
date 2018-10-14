@@ -141,7 +141,6 @@ class ContactForm extends React.Component {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        action="#"
         onSubmit={this.handleSubmit}
         className={css`
           display: flex;

@@ -26,8 +26,8 @@ module.exports = {
     },
 
     //source
+    // Add static assets before markdown files
     {
-      // Add static assets before markdown files
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `heroImages`,
@@ -35,7 +35,6 @@ module.exports = {
       },
     },
     {
-      // Add static assets before markdown files
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -54,6 +53,13 @@ module.exports = {
       options: {
         name: `leveranciers`,
         path: `${__dirname}/src/content/leveranciers`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `deliflash`,
+        path: `${__dirname}/src/content/deliflash`,
       },
     },
 

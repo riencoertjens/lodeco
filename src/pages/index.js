@@ -98,10 +98,26 @@ class IndexPage extends React.Component {
                 }
               }
             }
-            aanbiedingen: file(base: { eq: "aanbiedingen.jpg" }) {
-              childImageSharp {
-                fluid(maxWidth: 350) {
-                  ...GatsbyImageSharpFluid
+            deliflash: allMarkdownRemark(
+              filter: { frontmatter: { templateKey: { eq: "deliflash" } } }
+              sort: { fields: [frontmatter___title], order: ASC }
+            ) {
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    title
+                    image {
+                      childImageSharp {
+                        fluid(maxWidth: 350) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                    pdf {
+                      publicURL
+                    }
+                  }
                 }
               }
             }
@@ -131,6 +147,7 @@ class IndexPage extends React.Component {
             }
             leveranciers: allMarkdownRemark(
               filter: { frontmatter: { templateKey: { eq: "leverancier" } } }
+              sort: { fields: [frontmatter___title], order: ASC }
             ) {
               edges {
                 node {
@@ -171,10 +188,12 @@ class IndexPage extends React.Component {
                   margin-bottom: 50px;
                 `}
               >
-                <Button large="true">contact</Button>
-                <Button large="true" black>
+                <LinkButton href="#contact" large="true">
+                  contact
+                </LinkButton>
+                <LinkButton href="#aanbod" large="true" black>
                   aanbod
-                </Button>
+                </LinkButton>
               </div>
             </Hero>
             <Section
@@ -236,7 +255,9 @@ class IndexPage extends React.Component {
                         voor bakkers en kleinhandel.
                       </p>
                     </div>
-                    <Button clear="true">vraag ernaar</Button>
+                    <LinkButton href="/#contact" clear="true">
+                      vraag ernaar
+                    </LinkButton>
                   </Column>
                   <Column>
                     <Image
@@ -258,7 +279,9 @@ class IndexPage extends React.Component {
                         exclusieve importproducten.
                       </p>
                     </div>
-                    <Button clear="true">ons aanbod</Button>
+                    <LinkButton href="/#aanbod" clear="true">
+                      ons aanbod
+                    </LinkButton>
                   </Column>
                   <Column>
                     <Image
@@ -276,7 +299,9 @@ class IndexPage extends React.Component {
                         Of bel ons gewoon even ☺
                       </p>
                     </div>
-                    <Button clear="true">contact</Button>
+                    <LinkButton href="/#contact" clear="true">
+                      contact
+                    </LinkButton>
                   </Column>
                 </Columns>
               </Container>
@@ -317,7 +342,9 @@ class IndexPage extends React.Component {
                         smaken
                       </p>
                     </div>
-                    <Button clear="true">ons aanbod</Button>
+                    <LinkButton href="/#aanbod" clear="true">
+                      ons aanbod
+                    </LinkButton>
                   </Column>
 
                   <Column>
@@ -334,7 +361,9 @@ class IndexPage extends React.Component {
                         en verzorgingstehuizen.
                       </p>
                     </div>
-                    <Button clear="true">vraag ernaar</Button>
+                    <LinkButton href="/#contact" clear="true">
+                      vraag ernaar
+                    </LinkButton>
                   </Column>
                 </Columns>
                 <h2>
@@ -344,6 +373,7 @@ class IndexPage extends React.Component {
               </Container>
             </Section>
             <Section
+              name="promoties"
               className={css`
                 background: #bfbeb8;
                 h2 {
@@ -364,20 +394,36 @@ class IndexPage extends React.Component {
                   <br />
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
                 </p>
-                <Link
-                  className={css`
-                    width: 100%;
-                    max-width: 350px;
-                    display: block;
-                    margin: ${rhythm()} auto;
-                  `}
-                >
-                  <Image fluid={data.aanbiedingen.childImageSharp.fluid} />
-                </Link>
+
+                {data.deliflash.edges.length > 0 && (
+                  <a
+                    href={
+                      data.deliflash.edges[0].node.frontmatter.pdf.publicURL
+                    }
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className={css`
+                      width: 100%;
+                      max-width: 350px;
+                      display: block;
+                      margin: ${rhythm()} auto;
+                      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                    `}
+                  >
+                    <Image
+                      fluid={
+                        data.deliflash.edges[0].node.frontmatter.image
+                          .childImageSharp.fluid
+                      }
+                    />
+                  </a>
+                )}
+
                 <LinkButton href="/#contact">blijf op de hoogte</LinkButton>
               </Container>
             </Section>
             <Section
+              name="aanbod"
               className={css`
                 background: white;
               `}

@@ -26,6 +26,21 @@ collections:
       - { name: site, label: Site, widget: string }
       - { name: featured, label: Uitgelicht, widget: boolean, default: true }
       - { name: image, label: Afbeelding, widget: image, required: false }
+  - name: deliflash
+    label: Deli Flash
+    folder: src/content/deliflash/
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}'
+    fields:
+      - {
+          name: templateKey,
+          label: Template Key,
+          widget: hidden,
+          default: deliflash,
+        }
+      - { name: title, label: Datum, widget: date }
+      - { name: image, label: Afbeelding, widget: image, required: false }
+      - { label: 'PDF', name: 'pdf', widget: 'file' }
   # - name: posts
   #   label: Blog
   #   label_singular: Post

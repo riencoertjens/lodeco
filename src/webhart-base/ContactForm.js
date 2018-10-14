@@ -42,6 +42,19 @@ const FormItem = styled.label`
     `
     border-bottom: 1px solid green;
   `};
+  ${props =>
+    props.checkbox &&
+    `
+    flex-wrap: nowrap;
+    border-bottom: none;
+    align-items: flex-start;
+    margin: 0;
+    input {
+      flex: 0 0 auto;
+      margin-right: 15px;
+      margin-top: 5px;
+    }
+  `};
 `
 
 const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -69,6 +82,22 @@ const baseState = {
     value: '',
     valid: false,
   },
+  starter: {
+    value: false,
+    valid: true,
+  },
+  delicatessezaak: {
+    value: false,
+    valid: true,
+  },
+  broodjeszaak: {
+    value: false,
+    valid: true,
+  },
+  promofolder: {
+    value: false,
+    valid: true,
+  },
   ready: false,
 }
 
@@ -90,6 +119,10 @@ class ContactForm extends React.Component {
         name: this.state.name.value,
         email: this.state.email.value,
         message: this.state.message.value,
+        starter: this.state.starter.value,
+        delicatessezaak: this.state.delicatessezaak.value,
+        broodjeszaak: this.state.broodjeszaak.value,
+        promofolder: this.state.promofolder.value,
         'form-name': e.target['form-name'].value,
       }
       console.log(
@@ -133,7 +166,16 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const { name, email, message, ready } = this.state
+    const {
+      name,
+      email,
+      message,
+      ready,
+      starter,
+      delicatessezaak,
+      broodjeszaak,
+      promofolder,
+    } = this.state
     const formName = this.props.name ? this.props.name : 'contact-form'
     return (
       <form
@@ -179,6 +221,30 @@ class ContactForm extends React.Component {
             value={message.value}
             onChange={this.handleChange}
           />
+        </FormItem>
+        <FormItem checkbox="true">
+          <input type="checkbox" name="starter" value={starter.value} />
+          ik wil starten, stuur mij een gratis starterspakket
+        </FormItem>
+        <FormItem checkbox="true">
+          <input
+            type="checkbox"
+            name="delicatessezaak"
+            value={delicatessezaak.value}
+          />
+          meer info over aanbod voor delicatessezaken
+        </FormItem>
+        <FormItem checkbox="true">
+          <input
+            type="checkbox"
+            name="broodjeszaak"
+            value={broodjeszaak.value}
+          />
+          meer info over aanbod voor broodjeszaken
+        </FormItem>
+        <FormItem checkbox="true">
+          <input type="checkbox" name="promofolder" value={promofolder.value} />
+          hou mij op de hoogte van de promoties, bezorg mij de promotiefolder
         </FormItem>
         <Button type="submit" isDisabled={ready !== true}>
           Verzend

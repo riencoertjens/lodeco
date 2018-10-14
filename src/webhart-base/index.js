@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { css } from 'react-emotion'
 import {
   mediaQueries,
@@ -58,6 +59,7 @@ export const ButtonStyle = props => css`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   font-weight: 500;
   transition: 0.3s;
+  text-shadow: none;
   &:hover {
     ${props.clear
       ? `
@@ -87,9 +89,20 @@ export const ButtonStyle = props => css`
 export const Button = styled('button')`
   ${ButtonStyle};
 `
-export const LinkButton = styled(GatsbyLink)`
+const ButtonA = styled('a')`
   ${ButtonStyle};
 `
+const ButtonGatsbyLink = styled(GatsbyLink)`
+  ${ButtonStyle};
+`
+
+export const LinkButton = props => {
+  if (props.to) {
+    return <ButtonGatsbyLink {...props} />
+  } else {
+    return <ButtonA {...props} />
+  }
+}
 
 export const Columns = styled('div')`
   display: flex;

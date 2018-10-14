@@ -75,7 +75,7 @@ class Navigation extends React.Component {
           `}
         >
           <Link
-            to="/contact"
+            to="/#contact"
             key="nav-contact"
             className={css`
               background: black;
@@ -87,10 +87,10 @@ class Navigation extends React.Component {
           >
             contact
           </Link>
-          <Link to="/aanbod" key="nav-aanbod">
+          <Link to="/#aanbod" key="nav-aanbod">
             aanbod
           </Link>
-          <Link to="/promoties" key="nav-promoties">
+          <Link to="/#promoties" key="nav-promoties">
             promoties
           </Link>
           <Link
@@ -166,7 +166,7 @@ class Navigation extends React.Component {
           `}
         >
           <Link
-            to="/contact"
+            to="/#contact"
             key="nav-contact"
             className={css`
               position: absolute;
@@ -189,7 +189,7 @@ class Navigation extends React.Component {
           >
             contact
           </Link>
-          <Link to="/aanbod" key="nav-aanbod">
+          <Link to="/#aanbod" key="nav-aanbod">
             aanbod
           </Link>
           <Link
@@ -213,7 +213,7 @@ class Navigation extends React.Component {
           >
             <img src={Logo} />
           </Link>
-          <Link to="/promoties" key="nav-promoties">
+          <Link to="/#promoties" key="nav-promoties">
             promoties
           </Link>
         </nav>

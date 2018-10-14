@@ -447,42 +447,42 @@ class IndexPage extends React.Component {
                   <br />
                   van gerenommeerde leveranciers.
                 </p>
-                <div>
-                  <div
-                    className={css`
-                      display: flex;
-                      flex-wrap: wrap;
-                      align-items: center;
-                      justify-content: space-evenly;
-                    `}
-                  >
-                    {data.featuredLeveranciers.edges.map(({ node }, i) => (
-                      <OutboundLink
+                <div
+                  className={css`
+                    display: flex;
+                    max-width: 900px;
+                    margin: 0 auto;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+                  `}
+                >
+                  {data.featuredLeveranciers.edges.map(({ node }, i) => (
+                    <OutboundLink
+                      className={css`
+                        flex: 0 0 200px;
+                        margin: ${rhythm(1)};
+                      `}
+                      href={`//${node.frontmatter.site
+                        .replace('http://', '')
+                        .replace('https://', '')}`}
+                      key={i}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        alt={node.frontmatter.title}
                         className={css`
-                          flex: 0 0 200px;
-                          margin: ${rhythm(1 / 2)};
+                          transition: 0.1s;
+                          filter: saturate(0);
+                          &:hover {
+                            filter: saturate(1);
+                          }
                         `}
-                        href={`//${node.frontmatter.site
-                          .replace('http://', '')
-                          .replace('https://', '')}`}
-                        key={i}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          alt={node.frontmatter.title}
-                          className={css`
-                            transition: 0.1s;
-                            filter: saturate(0);
-                            &:hover {
-                              filter: saturate(1);
-                            }
-                          `}
-                          fixed={node.frontmatter.image.childImageSharp.fixed}
-                        />
-                      </OutboundLink>
-                    ))}
-                  </div>
+                        fixed={node.frontmatter.image.childImageSharp.fixed}
+                      />
+                    </OutboundLink>
+                  ))}
                 </div>
                 <Button
                   onClick={() =>

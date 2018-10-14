@@ -1,13 +1,7 @@
 import React from 'react'
-import styled from 'react-emotion'
-import { Button } from '.'
+import styled, { css } from 'react-emotion'
+import { Button, ButtonStyle } from '.'
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 0;
-`
 const FormItem = styled.label`
   width: 100%;
   position: relative;
@@ -142,12 +136,19 @@ class ContactForm extends React.Component {
     const { name, email, message, ready } = this.state
     const formName = this.props.name ? this.props.name : 'contact-form'
     return (
-      <StyledForm
+      <form
         name={formName}
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        action="/"
         // onSubmit={this.handleSubmit}
+        className={css`
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin: 0;
+        `}
       >
         <noscript>activate javascript to use this form</noscript>
         <input type="hidden" name="bot-field" />
@@ -180,11 +181,11 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
         </FormItem>
-
+        <input type="submit" />
         <Button type="submit" isDisabled={ready !== true}>
           Verzend
         </Button>
-      </StyledForm>
+      </form>
     )
   }
 }

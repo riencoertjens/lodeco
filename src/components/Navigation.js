@@ -50,21 +50,23 @@ class Navigation extends React.Component {
             z-index: 9999999;
             position: fixed;
             width: 100%;
-            top: ${menuActive ? '0px' : '-120px'};
+            top: ${menuActive ? '0px' : `-${3 * 36}px`};
             transition: 0.2s;
             justify-content: center;
             background: white;
             ${mediaQueries({
               display: ['flex', 'none'],
             })} text-align: center;
-            a {
+            &&& a {
               width: 100%;
               flex: 1 1 auto;
-              height: 40px;
-              line-height: 40px;
+              height: 36px;
+              line-height: 36px;
               text-transform: uppercase;
               text-decoration: none;
-              font-size: 16px;
+              font-weight: 500;
+              font-size: 12px;
+              letter-spacing: 0.3em;
             }
             .Burger {
               position: absolute;
@@ -102,14 +104,14 @@ class Navigation extends React.Component {
                 padding: 0;
                 transition: 0.3s;
                 flex: 0 1 auto;
-                width: 300px;
+                max-width: 200px;
                 &:hover {
                   background: white;
                 }
                 img {
                   width: 100%;
                 }
-                ${scrolled && `width: 100px;`};
+                ${scrolled && `max-width: 100px;`};
               }
             `}
           >
@@ -129,8 +131,8 @@ class Navigation extends React.Component {
         <nav
           className={css`
             ${mediaQueries({
-              height: ['80px', '80px', '40px'],
-              paddingTop: ['40px', '40px', '0'],
+              height: ['72px', '72px', '36px'],
+              paddingTop: ['36px', '36px', '0'],
               display: ['none', 'flex'],
             })} box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             position: fixed;
@@ -140,18 +142,19 @@ class Navigation extends React.Component {
             align-items: flex-start;
             justify-content: center;
             a {
-              height: 40px;
               display: inline-block;
               flex: 0 0 auto;
-              width: 200px;
-              vertical-align: middle;
-              text-transform: uppercase;
-              text-decoration: none;
-              font-size: 16px;
-              line-height: 40px;
-              letter-spacing: 2px;
+              font-size: 12px;
+              font-weight: 500;
+              height: 36px;
+              letter-spacing: 0.3em;
+              line-height: 36px;
               text-align: center;
+              text-decoration: none;
+              text-transform: uppercase;
               transition: 0.3s;
+              vertical-align: middle;
+              width: 200px;
               &:hover {
                 color: white;
                 background: black;
@@ -203,6 +206,7 @@ class Navigation extends React.Component {
                 transition: 0.3s;
                 flex: 0 1 auto;
                 width: 300px;
+                margin: 0 -20px;
                 &:hover {
                   background: white;
                 }

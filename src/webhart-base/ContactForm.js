@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
-import { Button, ButtonStyle } from '.'
+import { Button } from '.'
 
 const FormItem = styled.label`
   width: 100%;
@@ -13,10 +13,12 @@ const FormItem = styled.label`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  font-size: 15px;
   span {
     margin-right: 5px;
     width: 55px;
   }
+
   input,
   textarea {
     padding: 5px;
@@ -184,6 +186,9 @@ class ContactForm extends React.Component {
           flex-direction: column;
           align-items: flex-end;
           margin: 0;
+          && button {
+            margin-top: 20px;
+          }
         `}
       >
         <noscript>activate javascript to use this form</noscript>
@@ -217,6 +222,7 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
         </FormItem>
+        <br />
         <FormItem checkbox="true">
           <input
             type="checkbox"

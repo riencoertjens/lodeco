@@ -2,7 +2,7 @@ import React from 'react'
 import { css } from 'react-emotion'
 import { Container } from '../webhart-base'
 import GatsbyImage from 'gatsby-image'
-import { rhythm } from '../webhart-base/utils/style'
+import { rhythm, mediaQueryLT } from '../webhart-base/utils/style'
 const Hero = props => {
   const { children, className } = props
   return (
@@ -12,13 +12,22 @@ const Hero = props => {
         text-shadow: 1px 1px 0 white;
         width: 100vw;
         height: 100vh;
-        padding-top: 40px;
+        min-height: 560px;
+        padding-top: 36px;
+        ${mediaQueryLT['tablet']} {
+          padding-top: 72px;
+        }
         position: relative;
         h1,
         h2 {
           margin: ${rhythm()};
           margin-top: 190px;
           font-size: 45px;
+
+          ${mediaQueryLT['mobile']} {
+            margin-top: 120px;
+            font-size: 30px;
+          }
           text-align: 'center';
         }
         p {

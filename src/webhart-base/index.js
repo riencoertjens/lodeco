@@ -43,21 +43,21 @@ export const Section = styled.section`
 export const ButtonStyle = props => css`
   padding: ${rhythm(1 / 2)} ${rhythm(1)};
   margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.3em;
   ${props.large &&
     `
     padding: ${rhythm(1 / 2)} ${rhythm(2)};
     margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
-    font-size: 16px;
+    ${'' /* font-size: 16px; */}
   `};
   text-decoration: none;
   background: white;
-  letter-spacing: 2px;
   text-transform: uppercase;
   display: inline-block;
   border: none;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-  font-weight: 500;
   transition: 0.3s;
   text-shadow: none;
   &:hover {

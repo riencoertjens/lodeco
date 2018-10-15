@@ -183,6 +183,7 @@ class IndexPage extends React.Component {
                   className={css`
                     position: relative;
                     display: inline-block;
+                    font-size: 48px;
                   `}
                 >
                   <img
@@ -199,7 +200,12 @@ class IndexPage extends React.Component {
                   />
                   Elke dag met zorg gebracht
                 </h1>
-                <p>
+                <p
+                  className={css`
+                    font-weight: 300;
+                    font-size: 24px;
+                  `}
+                >
                   voor slagers, bakkers, delicatessenzaken, broodjeszaken,
                   tavernes, zorgcentra en rusthuizen
                 </p>
@@ -224,15 +230,22 @@ class IndexPage extends React.Component {
               `}
             >
               <Container>
-                <h2>
+                <h2
+                  className={css`
+                    font-size: 32px;
+                  `}
+                >
                   Specifiek aanbod voor slagers, delicatessenzaken,
                   broodjeszaken en horeca
                 </h2>
                 <p
                   className={css`
-                    font-weight: 300;
                     color: whitesmoke;
-                    font-size: ${rhythm(3 / 4)};
+                    font-weight: 300;
+                    font-size: 24px;
+                    max-width: 625px;
+                    margin-left: auto;
+                    margin-right: auto;
                   `}
                 >
                   Vooral broodbeleg, zoals fijne vleeswaren, kazen, en salades.
@@ -242,21 +255,19 @@ class IndexPage extends React.Component {
                   ondersteuning.
                 </p>
                 <Columns
-                  columnBase="300px"
                   className={css`
-                  ${mediaQueries({
-                    alignItems: ['center', 'center', 'stretch'],
-                    flexDirection: ['column', 'column', 'row'],
-                  })};
+                    ${mediaQueries({
+                      alignItems: ['center', 'center', 'stretch'],
+                      flexDirection: ['column', 'column', 'row'],
+                    })};
                     p {
                       color: ${colors.grey2};
-                      font-size: 14px;
-                      /* padding: 0 ${rhythm(2)}; */
+                      font-size: 15px;
                     }
                     h3 {
                       font-family: ${fonts.sansSerif};
-                      padding: 0 ${rhythm(1)};
-                      font-size: ${rhythm(2 / 3)};
+                      padding: 0 ${rhythm(3 / 4)};
+                      font-size: 18px;
                       font-weight: 600;
                     }
                   `}
@@ -289,8 +300,8 @@ class IndexPage extends React.Component {
                         ${ColumnImageStyle};
                         z-index: 999;
                         ${mediaQueryGT['tablet']} {
-                          margin: 0 -40px ${rhythm()};
-                          width: calc(100% + 80px);
+                          margin: 0 -60px ${rhythm()};
+                          width: calc(100% + 60px);
                         }
                       `}
                     />
@@ -335,7 +346,7 @@ class IndexPage extends React.Component {
                         we nemen zeer snel contact met u op.
                         <br />
                         <br />
-                        Of bel ons gewoon even ☺
+                        Of bel ons gewoon even
                       </p>
                     </div>
                     <LinkButton href="/#contact" clear="true">
@@ -352,19 +363,25 @@ class IndexPage extends React.Component {
               `}
             >
               <Container>
-                <h2>Kazen en bereide gerechten</h2>
+                <h2
+                  className={css`
+                    font-size: 32px;
+                  `}
+                >
+                  Kazen en bereide gerechten
+                </h2>
                 <Columns
                   className={css`
                     margin-bottom: ${rhythm()};
 
                     p {
                       color: ${colors.grey2};
-                      font-size: 14px;
+                      font-size: 15px;
                     }
                     h3 {
                       font-family: ${fonts.sansSerif};
-                      margin-bottom: ${rhythm(3 / 4)};
-                      font-size: ${rhythm(2 / 3)};
+                      padding: 0 ${rhythm(3 / 4)};
+                      font-size: 18px;
                       font-weight: 600;
                     }
                   `}
@@ -418,7 +435,8 @@ class IndexPage extends React.Component {
               className={css`
                 background: #bfbeb8;
                 h2 {
-                  color: black;//${colors.primaryBG};
+                  font-size: 32px;
+                  color: black;
                 }
               `}
             >
@@ -471,7 +489,13 @@ class IndexPage extends React.Component {
               `}
             >
               <Container>
-                <h2>onze producenten</h2>
+                <h2
+                  className={css`
+                    font-size: 32px;
+                  `}
+                >
+                  onze producenten
+                </h2>
                 <p
                   className={css`
                     color: black;
@@ -559,7 +583,6 @@ class IndexPage extends React.Component {
             </Section>
             <Section
               name="contact"
-              withComponent="footer"
               className={css`
                 background: #404040;
                 color: white;
@@ -592,7 +615,11 @@ class IndexPage extends React.Component {
                       src={Logo}
                       alt="logo"
                     />
-                    <p>
+                    <p
+                      className={css`
+                        font-size: 20px;
+                      `}
+                    >
                       Een familiezaak met 50 jaar ervaring. Groothandel met
                       persoonlijke service en kwaliteitsproducten. Gericht op de
                       kleinhandel die zich wil onderscheiden.
@@ -600,7 +627,7 @@ class IndexPage extends React.Component {
                     <p
                       className={css`
                         margin: 0;
-                        font-size: ${rhythm(1 / 2)};
+                        font-size: 15px;
                       `}
                     >
                       <OutboundLink
@@ -638,6 +665,9 @@ class IndexPage extends React.Component {
                         position: relative;
                         padding: ${rhythm(2)};
                         align-items: stretch;
+                        h3 {
+                          font-size: 20px;
+                        }
                       }
                     `}
                   >

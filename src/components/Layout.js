@@ -23,7 +23,11 @@ injectGlobal`
     &:after{
       content: '';
       width: 200px;
-      border-bottom: 1px dashed ;
+      height: 1px;
+      background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+      background-position: bottom;
+      background-size: 7px 1px;
+      background-repeat: repeat-x;
       position: absolute;
       bottom: -0.75rem;
       right: 50%;

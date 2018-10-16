@@ -25,14 +25,13 @@ const Hero = props => {
           font-size: 45px;
 
           ${mediaQueryLT['mobile']} {
-            margin-top: 120px;
+            margin-top: 20px;
             font-size: 30px;
           }
+          ${mediaQueryLT['tablet']} {
+            margin-top: 140px;
+          }
           text-align: 'center';
-        }
-        p {
-          color: #8b8b8b;
-          font-size: 18px;
         }
         ${className};
       `}

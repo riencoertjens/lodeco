@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import { Button } from '.'
+import { mediaQueryLT } from './utils/style'
 
 const FormItem = styled.label`
   width: 100%;
@@ -187,7 +188,12 @@ class ContactForm extends React.Component {
           align-items: flex-end;
           margin: 0;
           && button {
+            ${mediaQueryLT['tablet']} {
+              width: 100%;
+              margin: 20px 0 0;
+            }
             margin-top: 20px;
+            align-self: flex-start;
           }
         `}
       >
@@ -260,7 +266,7 @@ class ContactForm extends React.Component {
           hou mij op de hoogte van de promoties, bezorg mij de promotiefolder
         </FormItem>
         <Button type="submit" isDisabled={ready !== true}>
-          Verzend
+          verstuur bericht
         </Button>
       </form>
     )

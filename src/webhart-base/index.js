@@ -6,6 +6,7 @@ import {
   padding,
   colors,
   mediaQueryGT,
+  mediaQueryLT,
 } from './utils/style'
 import { rhythm } from './utils/style'
 import GatsbyLink from 'gatsby-link'
@@ -60,6 +61,7 @@ export const ButtonStyle = props => css`
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   transition: 0.3s;
   text-shadow: none;
+
   &:hover {
     ${props.clear
       ? `
@@ -112,6 +114,10 @@ export const Columns = styled('div')`
 export const Column = styled('div')`
   padding: ${rhythm(1 / 2)};
   flex: 0 1 300px;
+  position: relative;
+  ${mediaQueryLT['tablet']} {
+    margin: ${rhythm(1)} 0;
+  }
   ${mediaQueryGT['tablet']} {
     display: flex;
     flex-direction: column;

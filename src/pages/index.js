@@ -39,6 +39,7 @@ const ColumnImageStyle = css`
   width: 100%;
   ${mediaQueryLT['tablet']} {
     max-width: 300px;
+    max-height: 200px;
   }
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
 `
@@ -192,8 +193,9 @@ class IndexPage extends React.Component {
                     className={css`
                       position: absolute;
                       ${mediaQueries({
-                        top: ['-70px', '-60px', '-60px'],
-                        left: ['0', '0', '-70px'],
+                        width: ['75px', 'auto'],
+                        top: ['-60px', '-40px', '-40px'],
+                        left: ['-20px', '0', '-70px'],
                       })} z-index: 9999;
                       margin: 0;
                     `}
@@ -204,6 +206,11 @@ class IndexPage extends React.Component {
                   className={css`
                     font-weight: 300;
                     font-size: 24px;
+                    color: #bdbdbd;
+                    padding: 0 5px;
+                    ${mediaQueryLT['mobile']} {
+                      font-size: 20px;
+                    }
                   `}
                 >
                   voor slagers, bakkers, delicatessenzaken, broodjeszaken,
@@ -212,7 +219,9 @@ class IndexPage extends React.Component {
               </div>
               <div
                 className={css`
-                  margin-bottom: 50px;
+                  ${mediaQueries({
+                    marginBottom: ['00px', '50px'],
+                  })};
                 `}
               >
                 <LinkButton href="#contact" large="true">
@@ -227,6 +236,16 @@ class IndexPage extends React.Component {
               background={colors.primaryBG}
               className={css`
                 color: white;
+                h2 {
+                  font-size: 32px;
+                  &:after {
+                    background-image: linear-gradient(
+                      to right,
+                      white 33%,
+                      rgba(255, 255, 255, 0) 0%
+                    );
+                  }
+                }
               `}
             >
               <Container>
@@ -240,7 +259,7 @@ class IndexPage extends React.Component {
                 </h2>
                 <p
                   className={css`
-                    color: whitesmoke;
+                    color: #bdbdbd;
                     font-weight: 300;
                     font-size: 24px;
                     max-width: 625px;
@@ -261,8 +280,11 @@ class IndexPage extends React.Component {
                       flexDirection: ['column', 'column', 'row'],
                     })};
                     p {
-                      color: ${colors.grey2};
+                      color: #d7d6d3;
                       font-size: 15px;
+                      ${mediaQueryLT['tablet']} {
+                        margin: 0;
+                      }
                     }
                     h3 {
                       font-family: ${fonts.sansSerif};
@@ -281,11 +303,8 @@ class IndexPage extends React.Component {
                     <div>
                       <h3>voorverpakt en voorgesneden</h3>
                       <p>
-                        Een zeer uitgebreid assortiment
-                        <br />
-                        gesneden en verpakte producten
-                        <br />
-                        voor bakkers en kleinhandel.
+                        Een zeer uitgebreid assortiment gesneden en verpakte
+                        producten voor bakkers en kleinhandel.
                       </p>
                     </div>
                     <LinkButton href="/#contact" clear="true">
@@ -317,11 +336,7 @@ class IndexPage extends React.Component {
                       ons aanbod
                     </LinkButton>
                   </Column>
-                  <Column
-                    className={css`
-                      position: relative;
-                    `}
-                  >
+                  <Column>
                     <img
                       src={StampGratis}
                       alt="gratis starterspakket"
@@ -355,28 +370,23 @@ class IndexPage extends React.Component {
                   </Column>
                 </Columns>
               </Container>
-            </Section>
-            <Section
-              background={colors.primaryBG}
-              className={css`
-                color: white;
-              `}
-            >
-              <Container>
-                <h2
-                  className={css`
-                    font-size: 32px;
-                  `}
-                >
-                  Kazen en bereide gerechten
-                </h2>
+
+              <Container
+                className={css`
+                  margin-top: ${rhythm(2)};
+                `}
+              >
+                <h2>Kazen en bereide gerechten</h2>
                 <Columns
                   className={css`
                     margin-bottom: ${rhythm()};
 
                     p {
-                      color: ${colors.grey2};
+                      color: #d7d6d3;
                       font-size: 15px;
+                      ${mediaQueryLT['tablet']} {
+                        margin: 0;
+                      }
                     }
                     h3 {
                       font-family: ${fonts.sansSerif};
@@ -520,7 +530,7 @@ class IndexPage extends React.Component {
                   {data.featuredLeveranciers.edges.map(({ node }, i) => (
                     <OutboundLink
                       className={css`
-                        flex: 0 0 200px;
+                        flex: 0 0 250px;
                         margin: ${rhythm(1)};
                       `}
                       href={`//${node.frontmatter.site
@@ -593,6 +603,7 @@ class IndexPage extends React.Component {
                 <Columns
                   className={css`
                     text-align: left;
+                    color: #d1d1d1;
                   `}
                 >
                   <Column
@@ -603,6 +614,9 @@ class IndexPage extends React.Component {
                       &&& {
                         align-items: flex-start;
                         justify-content: space-between;
+                        ${mediaQueryLT['tablet']} {
+                          text-align: center;
+                        }
                       }
                     `}
                   >
@@ -611,6 +625,10 @@ class IndexPage extends React.Component {
                         position: absolute;
                         top: 0;
                         width: 200px;
+                        ${mediaQueryLT['tablet']} {
+                          left: 50%;
+                          margin-left: -100px;
+                        }
                       `}
                       src={Logo}
                       alt="logo"
@@ -618,6 +636,8 @@ class IndexPage extends React.Component {
                     <p
                       className={css`
                         font-size: 20px;
+                        color: #d1d1d1;
+                        font-weight: 300;
                       `}
                     >
                       Een familiezaak met 50 jaar ervaring. Groothandel met
@@ -628,6 +648,9 @@ class IndexPage extends React.Component {
                       className={css`
                         margin: 0;
                         font-size: 15px;
+                        a {
+                          text-decoration: none;
+                        }
                       `}
                     >
                       <OutboundLink
@@ -667,6 +690,10 @@ class IndexPage extends React.Component {
                         align-items: stretch;
                         h3 {
                           font-size: 20px;
+                          color: white;
+                        }
+                        ${mediaQueryLT['tablet']} {
+                          padding: ${rhythm(2)} 0;
                         }
                       }
                     `}

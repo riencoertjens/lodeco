@@ -155,9 +155,9 @@ class Navigation extends React.Component {
               transition: 0.3s;
               vertical-align: middle;
               width: 200px;
+              color: grey;
               &:hover {
-                color: white;
-                background: black;
+                color: black;
               }
             }
             &:before {
@@ -213,7 +213,7 @@ class Navigation extends React.Component {
                 img {
                   width: 100%;
                 }
-                ${scrolled && `width: 100px;`};
+                ${scrolled && `width: 100px;margin: 0 0;`};
               }
             `}
           >

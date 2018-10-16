@@ -24,12 +24,12 @@ const Hero = props => {
           margin-top: 190px;
           font-size: 45px;
 
+          ${mediaQueryLT['tablet']} {
+            margin-top: 140px;
+          }
           ${mediaQueryLT['mobile']} {
             margin-top: 20px;
             font-size: 30px;
-          }
-          ${mediaQueryLT['tablet']} {
-            margin-top: 140px;
           }
           text-align: 'center';
         }

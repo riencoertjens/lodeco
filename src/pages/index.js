@@ -21,12 +21,11 @@ import {
   colors,
   rhythm,
   fonts,
-  mediaQuery,
   mediaQueryGT,
   mediaQueryLT,
   mediaQueries,
 } from '../webhart-base/utils/style'
-import styled, { css } from 'react-emotion'
+import { css } from 'react-emotion'
 
 import Logo from '../../static/images/logo.svg'
 import StampVers from '../../static/images/stamp1.svg'
@@ -530,8 +529,8 @@ class IndexPage extends React.Component {
                   {data.featuredLeveranciers.edges.map(({ node }, i) => (
                     <OutboundLink
                       className={css`
-                        flex: 0 0 250px;
-                        margin: ${rhythm(1)};
+                        flex: 0 0 200px;
+                        margin: ${rhythm(1 / 2)};
                       `}
                       href={`//${node.frontmatter.site
                         .replace('http://', '')

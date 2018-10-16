@@ -50,7 +50,7 @@ class Navigation extends React.Component {
             z-index: 9999999;
             position: fixed;
             width: 100%;
-            top: ${menuActive ? '0px' : `-${3 * 36}px`};
+            top: ${menuActive ? '0px' : `-${2 * 36}px`};
             transition: 0.2s;
             justify-content: center;
             background: white;
@@ -131,8 +131,8 @@ class Navigation extends React.Component {
         <nav
           className={css`
             ${mediaQueries({
-              height: ['72px', '72px', '36px'],
-              paddingTop: ['36px', '36px', '0'],
+              height: '36px',
+              paddingTop: 0,
               display: ['none', 'flex'],
             })} box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             position: fixed;

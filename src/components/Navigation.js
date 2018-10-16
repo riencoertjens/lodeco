@@ -76,7 +76,7 @@ class Navigation extends React.Component {
             }
           `}
         >
-          <Link
+          {/* <Link
             to="/#contact"
             key="nav-contact"
             className={css`
@@ -88,7 +88,7 @@ class Navigation extends React.Component {
             `}
           >
             contact
-          </Link>
+          </Link> */}
           <Link to="/#aanbod" key="nav-aanbod">
             aanbod
           </Link>
@@ -169,7 +169,7 @@ class Navigation extends React.Component {
             }
           `}
         >
-          <Link
+          {/* <Link
             to="/#contact"
             key="nav-contact"
             className={css`
@@ -192,7 +192,7 @@ class Navigation extends React.Component {
             `}
           >
             contact
-          </Link>
+          </Link> */}
           <Link to="/#aanbod" key="nav-aanbod">
             aanbod
           </Link>

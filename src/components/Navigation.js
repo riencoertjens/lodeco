@@ -9,7 +9,6 @@ import { mediaQueryGT } from '../webhart-base/utils/style'
 
 const StyledLink = styled(Link)`
   background: white;
-  width: 160px;
   flex: 0 1 auto;
   height: 36px;
   line-height: 36px;
@@ -21,6 +20,9 @@ const StyledLink = styled(Link)`
   padding: 0 20px;
   &:hover {
     color: #aaa;
+  }
+  ${mediaQueryGT['mobile']} {
+    width: 160px;
   }
 `
 
@@ -34,6 +36,7 @@ const StyledLogoLink = styled(Link)`
     top: 0;
     z-index: 5;
   }
+  z-index: -5;
   top: 100%;
   max-width: 100px;
   transition: 0.2s;

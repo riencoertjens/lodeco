@@ -30,14 +30,37 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   padding: ${rhythm(2)} 0;
-  background: #eee;
+  h2 {
+    color: black;
+    ${mediaQueries({
+      fontSize: ['27px', '32px'],
+    })} &:after {
+      background-image: linear-gradient(
+        to right,
+        white 33%,
+        rgba(255, 255, 255, 0) 0%
+      );
+    }
+  }
+  p {
+    color: #bdbdbd;
+    font-weight: 300;
+    ${mediaQueries({
+      fontSize: ['18px', '24px'],
+    })} max-width: 625px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   ${Container} {
     text-align: center;
   }
+  background: white;
+
   ${props =>
     props.background &&
     `
     background: ${props.background};
+    h2{color: white;}
   `};
 `
 
@@ -47,12 +70,6 @@ export const ButtonStyle = props => css`
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.3em;
-  ${props.large &&
-    `
-    padding: ${rhythm(1 / 2)} ${rhythm(2)};
-    margin: ${rhythm(3 / 4)} ${rhythm(1 / 4)} 0;
-    ${'' /* font-size: 16px; */}
-  `};
   text-decoration: none;
   background: white;
   text-transform: uppercase;

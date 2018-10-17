@@ -1,14 +1,13 @@
 import React from 'react'
 
-import Link from 'gatsby-link'
 import Image from 'gatsby-image'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Obfuscate from 'react-obfuscate'
 
-import Hero from 'components/Hero'
-import ContactForm from 'webhart-base/ContactForm'
+import Hero from '../components/Hero'
+import ContactForm from '../webhart-base/ContactForm'
 import {
   Container,
   Section,
@@ -16,14 +15,14 @@ import {
   Button,
   Column,
   Columns,
-} from 'webhart-base'
+} from '../webhart-base'
 import {
   colors,
   rhythm,
-  fonts,
   mediaQueryGT,
   mediaQueryLT,
   mediaQueries,
+  styles,
 } from '../webhart-base/utils/style'
 import { css } from 'react-emotion'
 
@@ -138,8 +137,8 @@ class IndexPage extends React.Component {
                     site
                     image {
                       childImageSharp {
-                        fixed(width: 200) {
-                          ...GatsbyImageSharpFixed_tracedSVG
+                        fluid(maxWidth: 200) {
+                          ...GatsbyImageSharpFluid_tracedSVG
                         }
                       }
                     }
@@ -174,44 +173,33 @@ class IndexPage extends React.Component {
             <Hero image={data.HeroImage.childImageSharp.fixed}>
               <div
                 className={css`
-                  background: rgba(255, 255, 255, 0.5);
-                  box-shadow: 0 0 150px white;
+                  background: white;
+                  background: linear-gradient(
+                    rgba(255, 255, 255, 0.8) 75%,
+                    transparent
+                  );
                   width: 100%;
+                  padding-bottom: 50px;
                 `}
               >
-                <h1
-                  className={css`
-                    position: relative;
-                    display: inline-block;
-                    font-size: 48px;
-                  `}
-                >
+                <h1>
                   <img
                     src={StampVers}
                     alt="50 jaar vers"
                     className={css`
                       position: absolute;
+                      z-index: 9999;
+                      margin: 0;
                       ${mediaQueries({
                         width: ['75px', 'auto'],
-                        top: ['-60px', '-40px', '-40px'],
-                        left: ['-20px', '0', '-70px'],
-                      })} z-index: 9999;
-                      margin: 0;
+                        top: ['-50px', '-70px'],
+                        left: ['0', '0'],
+                      })};
                     `}
                   />
                   Elke dag met zorg gebracht
                 </h1>
-                <p
-                  className={css`
-                    font-weight: 300;
-                    font-size: 24px;
-                    color: #bdbdbd;
-                    padding: 0 5px;
-                    ${mediaQueryLT['mobile']} {
-                      font-size: 20px;
-                    }
-                  `}
-                >
+                <p>
                   voor slagers, bakkers, delicatessenzaken, broodjeszaken,
                   tavernes, zorgcentra en rusthuizen
                 </p>
@@ -231,68 +219,20 @@ class IndexPage extends React.Component {
                 </LinkButton>
               </div>
             </Hero>
-            <Section
-              background={colors.primaryBG}
-              className={css`
-                color: white;
-                h2 {
-                  font-size: 32px;
-                  &:after {
-                    background-image: linear-gradient(
-                      to right,
-                      white 33%,
-                      rgba(255, 255, 255, 0) 0%
-                    );
-                  }
-                }
-              `}
-            >
+            <Section background={colors.primaryBG}>
               <Container>
-                <h2
-                  className={css`
-                    font-size: 32px;
-                  `}
-                >
+                <h2>
                   Specifiek aanbod voor slagers, delicatessenzaken,
                   broodjeszaken en horeca
                 </h2>
-                <p
-                  className={css`
-                    color: #bdbdbd;
-                    font-weight: 300;
-                    font-size: 24px;
-                    max-width: 625px;
-                    margin-left: auto;
-                    margin-right: auto;
-                  `}
-                >
+                <p>
                   Vooral broodbeleg, zoals fijne vleeswaren, kazen, en salades.
                   Maar ook bereide gerechten en tapas, of exclusieve gerookte,
                   gedroogde of gekookte specialiteiten. Met onze eigen import en
                   persoonlijke service mag u rekenen op een zeer individuele
                   ondersteuning.
                 </p>
-                <Columns
-                  className={css`
-                    ${mediaQueries({
-                      alignItems: ['center', 'center', 'stretch'],
-                      flexDirection: ['column', 'column', 'row'],
-                    })};
-                    p {
-                      color: #d7d6d3;
-                      font-size: 15px;
-                      ${mediaQueryLT['tablet']} {
-                        margin: 0;
-                      }
-                    }
-                    h3 {
-                      font-family: ${fonts.sansSerif};
-                      padding: 0 ${rhythm(3 / 4)};
-                      font-size: 18px;
-                      font-weight: 600;
-                    }
-                  `}
-                >
+                <Columns className={styles.columns}>
                   <Column>
                     <Image
                       alt="charcuterie"
@@ -369,32 +309,11 @@ class IndexPage extends React.Component {
                   </Column>
                 </Columns>
               </Container>
-
-              <Container
-                className={css`
-                  margin-top: ${rhythm(2)};
-                `}
-              >
+            </Section>
+            <Section background={colors.primaryBG}>
+              <Container>
                 <h2>Kazen en bereide gerechten</h2>
-                <Columns
-                  className={css`
-                    margin-bottom: ${rhythm()};
-
-                    p {
-                      color: #d7d6d3;
-                      font-size: 15px;
-                      ${mediaQueryLT['tablet']} {
-                        margin: 0;
-                      }
-                    }
-                    h3 {
-                      font-family: ${fonts.sansSerif};
-                      padding: 0 ${rhythm(3 / 4)};
-                      font-size: 18px;
-                      font-weight: 600;
-                    }
-                  `}
-                >
+                <Columns className={styles.columns}>
                   <Column>
                     <Image
                       alt="kazen"
@@ -442,22 +361,15 @@ class IndexPage extends React.Component {
             <Section
               name="promoties"
               className={css`
-                background: #bfbeb8;
-                h2 {
-                  font-size: 32px;
+                p {
                   color: black;
                 }
               `}
+              background="#BDBDBD"
             >
               <Container>
                 <h2>2-wekelijkse promoties</h2>
-                <p
-                  className={css`
-                    color: black;
-                    font-weight: 300;
-                    font-size: ${rhythm(1)};
-                  `}
-                >
+                <p>
                   Onze tweewekelijkse folder geeft u steeds nieuwe ideeën
                   <br />
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
@@ -487,31 +399,19 @@ class IndexPage extends React.Component {
                     />
                   </a>
                 )}
-
                 <LinkButton href="/#contact">blijf op de hoogte</LinkButton>
               </Container>
             </Section>
-            <Section
-              name="aanbod"
-              className={css`
-                background: white;
-              `}
-            >
+            <Section name="aanbod">
               <Container>
                 <h2
                   className={css`
-                    font-size: 32px;
+                    color: black;
                   `}
                 >
                   onze producenten
                 </h2>
-                <p
-                  className={css`
-                    color: black;
-                    font-weight: 300;
-                    font-size: ${rhythm(1)};
-                  `}
-                >
+                <p>
                   Een uitgebreid aanbod van kwaliteitsproducten
                   <br />
                   van gerenommeerde leveranciers.
@@ -524,14 +424,19 @@ class IndexPage extends React.Component {
                     flex-wrap: wrap;
                     align-items: center;
                     justify-content: space-evenly;
+                    a {
+                      display: block;
+                      flex: 0 1 140px;
+                      margin: 10px 5px;
+                      ${mediaQueryGT['mobile']} {
+                        margin: 15px 10px;
+                        flex: 0 1 170px;
+                      }
+                    }
                   `}
                 >
                   {data.featuredLeveranciers.edges.map(({ node }, i) => (
                     <OutboundLink
-                      className={css`
-                        flex: 0 0 200px;
-                        margin: ${rhythm(1 / 2)};
-                      `}
                       href={`//${node.frontmatter.site
                         .replace('http://', '')
                         .replace('https://', '')}`}
@@ -541,14 +446,8 @@ class IndexPage extends React.Component {
                     >
                       <Image
                         alt={node.frontmatter.title}
-                        className={css`
-                          transition: 0.1s;
-                          filter: saturate(0);
-                          &:hover {
-                            filter: saturate(1);
-                          }
-                        `}
-                        fixed={node.frontmatter.image.childImageSharp.fixed}
+                        fluid={node.frontmatter.image.childImageSharp.fluid}
+                        style={{ width: '100%' }}
                       />
                     </OutboundLink>
                   ))}
@@ -592,9 +491,9 @@ class IndexPage extends React.Component {
             </Section>
             <Section
               name="contact"
+              background="#404040"
               className={css`
-                background: #404040;
-                color: white;
+                color: #d1d1d1;
                 padding: 0;
               `}
             >
@@ -602,19 +501,21 @@ class IndexPage extends React.Component {
                 <Columns
                   className={css`
                     text-align: left;
-                    color: #d1d1d1;
                   `}
                 >
                   <Column
                     className={css`
-                      flex: 1 1 350px;
-                      padding: 150px ${rhythm(2)} ${rhythm(2)};
-                      position: relative;
-                      &&& {
+                      && {
+                        flex: 1 1 350px;
+                        padding: 150px ${rhythm(2)} ${rhythm(1)};
+                        position: relative;
+                        margin-top: 0;
                         align-items: flex-start;
                         justify-content: space-between;
-                        ${mediaQueryLT['tablet']} {
-                          text-align: center;
+                        text-align: center;
+                        ${mediaQueryGT['tablet']} {
+                          text-align: left;
+                          padding-bottom: ${rhythm(2)};
                         }
                       }
                     `}
@@ -634,9 +535,11 @@ class IndexPage extends React.Component {
                     />
                     <p
                       className={css`
-                        font-size: 20px;
-                        color: #d1d1d1;
-                        font-weight: 300;
+                        && {
+                          font-size: 20px;
+                          color: #d1d1d1;
+                          font-weight: 300;
+                        }
                       `}
                     >
                       Een familiezaak met 50 jaar ervaring. Groothandel met
@@ -645,10 +548,12 @@ class IndexPage extends React.Component {
                     </p>
                     <p
                       className={css`
-                        margin: 0;
-                        font-size: 15px;
-                        a {
-                          text-decoration: none;
+                        && {
+                          margin: 0;
+                          font-size: 15px;
+                          a {
+                            text-decoration: none;
+                          }
                         }
                       `}
                     >
@@ -685,14 +590,15 @@ class IndexPage extends React.Component {
                       && {
                         flex: 1 1 500px;
                         position: relative;
-                        padding: ${rhythm(2)};
                         align-items: stretch;
                         h3 {
                           font-size: 20px;
                           color: white;
                         }
-                        ${mediaQueryLT['tablet']} {
-                          padding: ${rhythm(2)} 0;
+                        margin: 0;
+                        padding: 0 0 ${rhythm(2)};
+                        ${mediaQueryGT['tablet']} {
+                          padding: ${rhythm(2)};
                         }
                       }
                     `}

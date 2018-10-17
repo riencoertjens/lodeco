@@ -1,6 +1,6 @@
 import facepaint from 'facepaint'
 import config from './site-config'
-import { keyframes } from 'emotion'
+import { keyframes, css } from 'emotion'
 
 import Typography from 'typography'
 
@@ -119,16 +119,23 @@ export const mediaQueries = facepaint(
   })
 )
 
-export default {
-  colors,
-  sizing,
-  bps,
-  animations,
-  breakpoints,
-  padding,
-  mediaQueries,
-  mediaQuery,
-  mediaQueryGT,
-  mediaQueryLT,
-  fonts,
+export const styles = {
+  columns: css`
+    &&& {
+      p {
+        color: #d7d6d3;
+        font-size: 15px;
+        ${mediaQueryLT['tablet']} {
+          margin: 0;
+        }
+      }
+      h3 {
+        color: white;
+        font-family: ${fonts.sansSerif};
+        padding: 0 ${rhythm(3 / 4)};
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  `,
 }

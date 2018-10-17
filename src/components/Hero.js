@@ -2,7 +2,12 @@ import React from 'react'
 import { css } from 'react-emotion'
 import { Container } from '../webhart-base'
 import GatsbyImage from 'gatsby-image'
-import { rhythm, mediaQueryLT } from '../webhart-base/utils/style'
+import {
+  rhythm,
+  mediaQueryLT,
+  mediaQueryGT,
+  mediaQueries,
+} from '../webhart-base/utils/style'
 const Hero = props => {
   const { children, className } = props
   return (
@@ -13,25 +18,28 @@ const Hero = props => {
         width: 100vw;
         height: 100vh;
         min-height: 560px;
-        padding-top: 36px;
-        ${mediaQueryLT['tablet']} {
-          padding-top: 72px;
-        }
+        padding-top: 75px;
         position: relative;
+        ${mediaQueryGT['mobile']} {
+          padding-top: 130px;
+        }
         h1,
         h2 {
-          margin: ${rhythm()};
-          margin-top: 190px;
-          font-size: 45px;
-
-          ${mediaQueryLT['tablet']} {
-            margin-top: 140px;
-          }
-          ${mediaQueryLT['mobile']} {
-            margin-top: 20px;
-            font-size: 30px;
-          }
+          position: relative;
+          display: inline-block;
           text-align: 'center';
+          ${mediaQueries({
+            fontSize: ['30px', '48px'],
+          })};
+        }
+        p {
+          font-weight: 300;
+          font-size: 24px;
+          color: #bdbdbd;
+          padding: 0 5px;
+          ${mediaQueries({
+            fontSize: ['20px', '24px'],
+          })};
         }
         ${className};
       `}
@@ -39,7 +47,7 @@ const Hero = props => {
       <Container
         width="wide"
         className={css`
-          padding: ${rhythm(2)} 0;
+          padding: 0 0 ${rhythm(2)};
           display: flex;
           flex-flow: column;
           justify-content: space-between;

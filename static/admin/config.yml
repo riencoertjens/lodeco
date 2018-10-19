@@ -15,6 +15,7 @@ collections:
     folder: src/content/leveranciers/
     create: true
     slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    preview: false
     fields:
       - {
           name: templateKey,
@@ -31,6 +32,7 @@ collections:
     folder: src/content/deliflash/
     create: true
     slug: '{{year}}-{{month}}-{{day}}'
+    preview: false
     fields:
       - {
           name: templateKey,
@@ -38,7 +40,8 @@ collections:
           widget: hidden,
           default: deliflash,
         }
-      - { name: title, label: Datum, widget: date, format: 'YYYY-MM-DD' }
+      - { name: title, label: Naam, widget: string }
+      - { name: date, label: Datum, widget: date, format: 'YYYY-MM-DD' }
       - { name: image, label: Afbeelding, widget: image, required: false }
       - { label: 'PDF', name: 'pdf', widget: 'file' }
   # - name: posts

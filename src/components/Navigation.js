@@ -7,11 +7,13 @@ import Logo from '../../static/images/logo.svg'
 
 import { mediaQueryGT } from '../webhart-base/utils/style'
 
+const menuHeight = 36
+
 const StyledLink = styled(Link)`
   background: white;
   flex: 0 1 auto;
-  height: 36px;
-  line-height: 36px;
+  height: ${menuHeight}px;
+  line-height: ${menuHeight}px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
@@ -21,7 +23,7 @@ const StyledLink = styled(Link)`
   &:hover {
     color: #aaa;
   }
-  ${mediaQueryGT['mobile']} {
+  ${mediaQueryGT['tablet']} {
     width: 160px;
   }
 `
@@ -30,7 +32,7 @@ const StyledLogoLink = styled(Link)`
   padding: 0;
   position: absolute;
   align-self: center;
-  ${mediaQueryGT['mobile']} {
+  ${mediaQueryGT['tablet']} {
     align-self: flex-start;
     position: relative;
     top: 0;
@@ -44,7 +46,7 @@ const StyledLogoLink = styled(Link)`
   img {
     width: 100%;
   }
-  ${mediaQueryGT['mobile']} {
+  ${mediaQueryGT['tablet']} {
     max-width: 200px;
   }
 `
@@ -100,7 +102,7 @@ class Navigation extends React.Component {
           justify-content: center;
           position: fixed;
           text-align: center;
-          top: ${menuActive ? '0px' : `-${2 * 36}px`};
+          top: ${menuActive ? '0px' : `-${3 * menuHeight}px`};
           transition: 0.2s;
           width: 100%;
           z-index: 9999999;
@@ -110,9 +112,9 @@ class Navigation extends React.Component {
             right: 0;
             margin: -5px 0;
           }
-          ${mediaQueryGT['mobile']} {
+          ${mediaQueryGT['tablet']} {
             top: 0;
-            height: 36px;
+            height: ${menuHeight}px;
             flex-direction: row;
             justify-content: center;
             align-items: flex-start;
@@ -139,15 +141,31 @@ class Navigation extends React.Component {
         <StyledLink to="/#promoties" key="nav-promoties">
           promoties
         </StyledLink>
+        <StyledLink
+          to="/#contact"
+          key="nav-promoties"
+          className={css`
+            color: white;
+            background: black;
+            order: -2;
+            ${mediaQueryGT['tablet']} {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          `}
+        >
+          contact
+        </StyledLink>
         <Hamburger
           active={menuActive}
           onClick={() => this.setState({ menuActive: !menuActive })}
           width={25}
           lineHeight={2}
           lineSpacing={5}
-          color="black"
+          color={menuActive ? 'white' : 'black'}
           borderRadius={0}
-          padding="20px"
+          padding="15px"
         />
       </nav>
     )

@@ -38,7 +38,7 @@ collections:
           widget: hidden,
           default: deliflash,
         }
-      - { name: title, label: Datum, widget: date, format: 'MMM Do YY' }
+      - { name: title, label: Datum, widget: date, format: 'YYYY-MM-DD' }
       - { name: image, label: Afbeelding, widget: image, required: false }
       - { label: 'PDF', name: 'pdf', widget: 'file' }
   # - name: posts

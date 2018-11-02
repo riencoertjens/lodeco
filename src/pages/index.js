@@ -29,6 +29,17 @@ import { css } from 'react-emotion'
 import Logo from '../../static/images/logo.svg'
 import StampVers from '../../static/images/stamp1.svg'
 import StampGratis from '../../static/images/stamp2.svg'
+import moment from 'moment'
+
+const isFuture = dateString => {
+  const now = new Date()
+  const compareDate = new Date(dateString)
+  console.log(compareDate)
+  console.log('>')
+  console.log(now)
+  console.log(compareDate > now)
+  return compareDate > now
+}
 
 const ColumnImageStyle = css`
   border: 1px solid white;
@@ -102,12 +113,14 @@ class IndexPage extends React.Component {
             deliflash: allMarkdownRemark(
               filter: { frontmatter: { templateKey: { eq: "deliflash" } } }
               sort: { fields: [frontmatter___title], order: ASC }
+              limit: 2
             ) {
               edges {
                 node {
                   id
                   frontmatter {
                     title
+                    date
                     image {
                       childImageSharp {
                         fluid(maxWidth: 350) {
@@ -374,31 +387,38 @@ class IndexPage extends React.Component {
                   <br />
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
                 </p>
-
-                {data.deliflash.edges.length > 0 && (
-                  <a
-                    href={
-                      data.deliflash.edges[0].node.frontmatter.pdf.publicURL
-                    }
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={css`
-                      width: 100%;
-                      max-width: 350px;
-                      display: block;
-                      margin: ${rhythm()} auto;
-                      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-                    `}
-                  >
-                    <Image
-                      alt="deliflash magazine"
-                      fluid={
-                        data.deliflash.edges[0].node.frontmatter.image
-                          .childImageSharp.fluid
-                      }
-                    />
-                  </a>
-                )}
+                {data.deliflash.edges.length > 0 &&
+                  data.deliflash.edges.map(({ node }, i) => (
+                    <React.Fragment key={i}>
+                      <h4
+                        className={css`
+                          margin-bottom: ${rhythm(1 / 2)};
+                        `}
+                      >
+                        {isFuture(node.frontmatter.date)
+                          ? 'volgende promotie'
+                          : node.frontmatter.title}
+                      </h4>
+                      <a
+                        href={node.frontmatter.pdf.publicURL}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className={css`
+                          width: 100%;
+                          max-width: 350px;
+                          display: block;
+                          margin: ${rhythm(1 / 2)} auto;
+                          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                          background: white;
+                        `}
+                      >
+                        <Image
+                          alt={`deliflash magazine ${node.frontmatter.date}`}
+                          fluid={node.frontmatter.image.childImageSharp.fluid}
+                        />
+                      </a>
+                    </React.Fragment>
+                  ))}
                 <LinkButton href="/#contact">blijf op de hoogte</LinkButton>
               </Container>
             </Section>

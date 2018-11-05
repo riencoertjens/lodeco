@@ -143,7 +143,7 @@ class Navigation extends React.Component {
         </StyledLink>
         <StyledLink
           to="/#contact"
-          key="nav-promoties"
+          key="nav-contact"
           className={css`
             color: white;
             background: black;

@@ -380,45 +380,56 @@ class IndexPage extends React.Component {
               `}
               background="#BDBDBD"
             >
-              <Container>
+              <Container width="wide">
                 <h2>2-wekelijkse promoties</h2>
                 <p>
                   Onze tweewekelijkse folder geeft u steeds nieuwe ideeën
                   <br />
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
                 </p>
-                {data.deliflash.edges.length > 0 &&
-                  data.deliflash.edges.map(({ node }, i) => (
-                    <React.Fragment key={i}>
-                      <h4
-                        className={css`
-                          margin-bottom: ${rhythm(1 / 2)};
-                        `}
-                      >
-                        {isFuture(node.frontmatter.date)
-                          ? 'volgende promotie'
-                          : node.frontmatter.title}
-                      </h4>
-                      <a
-                        href={node.frontmatter.pdf.publicURL}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className={css`
-                          width: 100%;
-                          max-width: 350px;
-                          display: block;
-                          margin: ${rhythm(1 / 2)} auto;
-                          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-                          background: white;
-                        `}
-                      >
-                        <Image
-                          alt={`deliflash magazine ${node.frontmatter.date}`}
-                          fluid={node.frontmatter.image.childImageSharp.fluid}
-                        />
-                      </a>
-                    </React.Fragment>
-                  ))}
+                <div
+                  className={css`
+                    display: flex;
+                    justify-content: center;
+                    & > div {
+                      margin: ${rhythm(1 / 2)};
+                      flex: 0 1 250px;
+                    }
+                  `}
+                >
+                  {data.deliflash.edges.length > 0 &&
+                    data.deliflash.edges.map(({ node }, i) => (
+                      <div key={i}>
+                        <h4
+                          className={css`
+                            margin-bottom: ${rhythm(1 / 2)};
+                          `}
+                        >
+                          {isFuture(node.frontmatter.date)
+                            ? 'volgende promotie'
+                            : node.frontmatter.title}
+                        </h4>
+                        <a
+                          href={node.frontmatter.pdf.publicURL}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className={css`
+                            width: 100%;
+                            max-width: 350px;
+                            display: block;
+                            margin: ${rhythm(1 / 2)} auto;
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+                            background: white;
+                          `}
+                        >
+                          <Image
+                            alt={`deliflash magazine ${node.frontmatter.date}`}
+                            fluid={node.frontmatter.image.childImageSharp.fluid}
+                          />
+                        </a>
+                      </div>
+                    ))}
+                </div>
                 <LinkButton href="/#contact">blijf op de hoogte</LinkButton>
               </Container>
             </Section>

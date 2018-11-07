@@ -34,10 +34,6 @@ import moment from 'moment'
 const isFuture = dateString => {
   const now = new Date()
   const compareDate = new Date(dateString)
-  console.log(compareDate)
-  console.log('>')
-  console.log(now)
-  console.log(compareDate > now)
   return compareDate > now
 }
 
@@ -174,6 +170,20 @@ class IndexPage extends React.Component {
                           ...GatsbyImageSharpFixed_tracedSVG
                         }
                       }
+                    }
+                  }
+                }
+              }
+            }
+            leverancierLogos: allFile(
+              filter: { sourceInstanceName: { eq: "leverancierlogos" } }
+            ) {
+              edges {
+                node {
+                  name
+                  childImageSharp {
+                    fluid(maxWidth: 200) {
+                      ...GatsbyImageSharpFluid_tracedSVG
                     }
                   }
                 }
@@ -466,7 +476,24 @@ class IndexPage extends React.Component {
                     }
                   `}
                 >
-                  {data.featuredLeveranciers.edges.map(({ node }, i) => (
+                  {data.leverancierLogos.edges.map(({ node }, i) => (
+                    <OutboundLink
+                      href={`//${node.name
+                        .replace('http://', '')
+                        .replace('https://', '')}`}
+                      key={i}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {console.log(node)}
+                      <Image
+                        alt={node.name}
+                        fluid={node.childImageSharp.fluid}
+                        style={{ width: '100%' }}
+                      />
+                    </OutboundLink>
+                  ))}
+                  {/* {data.featuredLeveranciers.edges.map(({ node }, i) => (
                     <OutboundLink
                       href={`//${node.frontmatter.site
                         .replace('http://', '')
@@ -481,9 +508,9 @@ class IndexPage extends React.Component {
                         style={{ width: '100%' }}
                       />
                     </OutboundLink>
-                  ))}
+                  ))} */}
                 </div>
-                <Button
+                {/* <Button
                   onClick={() =>
                     this.setState({ showSuppliers: !this.state.showSuppliers })
                   }
@@ -517,7 +544,7 @@ class IndexPage extends React.Component {
                       {node.frontmatter.title}
                     </OutboundLink>
                   ))}{' '}
-                </div>
+                </div> */}
               </Container>
             </Section>
             <Section

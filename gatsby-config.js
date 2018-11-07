@@ -58,6 +58,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `leverancierlogos`,
+        path: `${__dirname}/src/content/leverancierlogos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `deliflash`,
         path: `${__dirname}/src/content/deliflash`,
       },

@@ -478,7 +478,7 @@ class IndexPage extends React.Component {
                 >
                   {data.leverancierLogos.edges.map(({ node }, i) => (
                     <OutboundLink
-                      href={`//${node.name
+                      href={`http://${node.name
                         .replace('http://', '')
                         .replace('https://', '')}`}
                       key={i}

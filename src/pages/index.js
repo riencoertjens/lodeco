@@ -12,7 +12,6 @@ import {
   Container,
   Section,
   LinkButton,
-  Button,
   Column,
   Columns,
 } from '../webhart-base'
@@ -29,7 +28,6 @@ import { css } from 'react-emotion'
 import Logo from '../../static/images/logo.svg'
 import StampVers from '../../static/images/stamp1.svg'
 import StampGratis from '../../static/images/stamp2.svg'
-import moment from 'moment'
 
 const isFuture = dateString => {
   const now = new Date()
@@ -108,7 +106,7 @@ class IndexPage extends React.Component {
             }
             deliflash: allMarkdownRemark(
               filter: { frontmatter: { templateKey: { eq: "deliflash" } } }
-              sort: { fields: [frontmatter___title], order: ASC }
+              sort: { fields: [frontmatter___title], order: DESC }
               limit: 2
             ) {
               edges {
@@ -485,7 +483,6 @@ class IndexPage extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {console.log(node)}
                       <Image
                         alt={node.name}
                         fluid={node.childImageSharp.fluid}
@@ -666,6 +663,41 @@ class IndexPage extends React.Component {
                   </Column>
                 </Columns>
               </Container>
+              <div
+                className={css`
+                  width: 100%;
+                  text-align: center;
+                  font-size: 15px;
+                `}
+              >
+                <span>
+                  alle rechten voorgesneden &copy; Lodeco-Eeckhout -{' '}
+                  {new Date().getFullYear()} | made with{' '}
+                  <OutboundLink
+                    rel="noopener"
+                    href="https://www.gatsbyjs.org"
+                    target="_blank"
+                  >
+                    Gatsby
+                  </OutboundLink>{' '}
+                  by{' '}
+                  <OutboundLink
+                    rel="noopener"
+                    href="//lucifer.be"
+                    target="_blank"
+                  >
+                    lucifer
+                  </OutboundLink>{' '}
+                  and{' '}
+                  <OutboundLink
+                    rel="noopener"
+                    href="//web-hart.com"
+                    target="_blank"
+                  >
+                    WEBhart
+                  </OutboundLink>
+                </span>
+              </div>
             </Section>
           </React.Fragment>
         )}

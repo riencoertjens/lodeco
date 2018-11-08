@@ -27,6 +27,7 @@ const config = {
   siteUrl: base.url,
   // pathPrefix: ``,
 
+  analyticsID: 'UA-19600184-8',
   manifest: {
     name: base.name,
     short_name: base.shortName,

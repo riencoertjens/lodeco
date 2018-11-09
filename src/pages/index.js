@@ -106,7 +106,7 @@ class IndexPage extends React.Component {
             }
             deliflash: allMarkdownRemark(
               filter: { frontmatter: { templateKey: { eq: "deliflash" } } }
-              sort: { fields: [frontmatter___title], order: DESC }
+              sort: { fields: [frontmatter___date], order: DESC }
               limit: 2
             ) {
               edges {
@@ -399,6 +399,7 @@ class IndexPage extends React.Component {
                   className={css`
                     display: flex;
                     justify-content: center;
+                    flex-direction: row-reverse;
                     & > div {
                       margin: ${rhythm(1 / 2)};
                       flex: 0 1 250px;

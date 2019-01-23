@@ -161,6 +161,7 @@ module.exports = {
             // "X-Frame-Options: ALLOW-FROM https://app.storyblok.com/",
             'X-Frame-Options: ALLOW-FROM *',
           ],
+          '/sw.js': ['Cache-Control: no-cache'], //dont cache the service worker!
         },
         mergeSecurityHeaders: false,
       },

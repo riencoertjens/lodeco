@@ -40,11 +40,7 @@ const FormItem = styled.label`
     height: 100px;
     width: 100%;
   }
-  ${props =>
-    !props.invalid &&
-    `
-    border-bottom: 1px solid green;
-  `};
+
   ${props =>
     props.checkbox &&
     `
@@ -60,120 +56,110 @@ const FormItem = styled.label`
   `};
 `
 
-const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-const validateEmail = email => {
-  return re.test(String(email).toLowerCase())
-}
-const validate = (type, value) => {
-  return value && (type != 'email' || validateEmail(value)) ? true : false
-}
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-const baseState = {
-  name: {
-    value: '',
-    valid: false,
-  },
-  email: {
-    value: '',
-    valid: false,
-  },
-  message: {
-    value: '',
-    valid: false,
-  },
-  starter: {
-    value: false,
-    valid: true,
-  },
-  delicatessezaak: {
-    value: false,
-    valid: true,
-  },
-  broodjeszaak: {
-    value: false,
-    valid: true,
-  },
-  promofolder: {
-    value: false,
-    valid: true,
-  },
-  ready: false,
-}
+// const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+// const validateEmail = email => {
+//   return re.test(String(email).toLowerCase())
+// }
+// const validate = (type, value) => {
+//   return value && (type != 'email' || validateEmail(value)) ? true : false
+// }
+// function encode(data) {
+//   return Object.keys(data)
+//     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+//     .join('&')
+// }
+// const baseState = {
+//   name: {
+//     value: '',
+//     valid: false,
+//   },
+//   email: {
+//     value: '',
+//     valid: false,
+//   },
+//   message: {
+//     value: '',
+//     valid: false,
+//   },
+//   starter: {
+//     value: false,
+//     valid: true,
+//   },
+//   delicatessezaak: {
+//     value: false,
+//     valid: true,
+//   },
+//   broodjeszaak: {
+//     value: false,
+//     valid: true,
+//   },
+//   promofolder: {
+//     value: false,
+//     valid: true,
+//   },
+//   ready: false,
+// }
 
 class ContactForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = baseState
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = baseState
+  // }
 
-  handleSubmit = e => {
-    e.preventDefault()
+  // handleSubmit = e => {
+  //   e.preventDefault()
 
-    if (
-      this.state.name.valid &&
-      this.state.message.valid &&
-      this.state.email.valid
-    ) {
-      const data = {
-        name: this.state.name.value,
-        email: this.state.email.value,
-        message: this.state.message.value,
-        starter: this.state.starter.value,
-        delicatessezaak: this.state.delicatessezaak.value,
-        broodjeszaak: this.state.broodjeszaak.value,
-        promofolder: this.state.promofolder.value,
-        'form-name': e.target['form-name'].value,
-      }
+  //   if (
+  //     this.state.name.valid &&
+  //     this.state.message.valid &&
+  //     this.state.email.valid
+  //   ) {
+  //     const data = {
+  //       name: this.state.name.value,
+  //       email: this.state.email.value,
+  //       message: this.state.message.value,
+  //       starter: this.state.starter.value,
+  //       delicatessezaak: this.state.delicatessezaak.value,
+  //       broodjeszaak: this.state.broodjeszaak.value,
+  //       promofolder: this.state.promofolder.value,
+  //       'form-name': e.target['form-name'].value,
+  //     }
 
-      fetch('/?no-cache=1', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode(data),
-      })
-        .then(() => {
-          alert('Bericht verzonden')
-          this.setState(baseState)
-        })
-        .catch(error => {
-          alert(error)
-        })
-    }
-  }
+  //     fetch('/?no-cache=1', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //       body: encode(data),
+  //     })
+  //       .then(() => {
+  //         alert('Bericht verzonden')
+  //         this.setState(baseState)
+  //       })
+  //       .catch(error => {
+  //         alert(error)
+  //       })
+  //   }
+  // }
 
-  handleChange = ({ target }) => {
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    const newState = {
-      ...this.state,
-      [target.name]: {
-        valid: validate(target.name, value),
-        value: value,
-      },
-    }
-    this.setState({
-      [target.name]: {
-        valid: validate(target.name, value),
-        value: value,
-      },
-      ready:
-        newState.name.valid && newState.message.valid && newState.email.valid,
-    })
-  }
+  // handleChange = ({ target }) => {
+  //   const value = target.type === 'checkbox' ? target.checked : target.value
+  //   const newState = {
+  //     ...this.state,
+  //     [target.name]: {
+  //       valid: validate(target.name, value),
+  //       value: value,
+  //     },
+  //   }
+  //   this.setState({
+  //     [target.name]: {
+  //       valid: validate(target.name, value),
+  //       value: value,
+  //     },
+  //     ready:
+  //       newState.name.valid && newState.message.valid && newState.email.valid,
+  //   })
+  // }
 
   render() {
-    const {
-      name,
-      email,
-      message,
-      ready,
-      starter,
-      delicatessezaak,
-      broodjeszaak,
-      promofolder,
-    } = this.state
     const formName = this.props.name ? this.props.name : 'contact-form'
     return (
       <form
@@ -181,7 +167,6 @@ class ContactForm extends React.Component {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={this.handleSubmit}
         className={css`
           display: flex;
           flex-direction: column;
@@ -197,77 +182,38 @@ class ContactForm extends React.Component {
           }
         `}
       >
-        <noscript>activate javascript to use this form</noscript>
         <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value={formName} />
-        <FormItem invalid={!name.valid}>
+        <input type="hidden" name="form-name" />
+        <FormItem>
           <span>Naam:</span>
-          <input
-            type="text"
-            name="name"
-            value={name.value}
-            onChange={this.handleChange}
-            required
-          />
+          <input type="text" name="name" required />
         </FormItem>
-        <FormItem invalid={!email.valid}>
+        <FormItem>
           <span>Email:</span>
-          <input
-            type="email"
-            name="email"
-            value={email.value}
-            onChange={this.handleChange}
-            required
-          />
+          <input type="email" name="email" required />
         </FormItem>
-        <FormItem invalid={!message.valid}>
+        <FormItem>
           <span>Bericht:</span>
-          <textarea
-            name="message"
-            value={message.value}
-            onChange={this.handleChange}
-          />
+          <textarea name="message" />
         </FormItem>
         <br />
         <FormItem checkbox="true">
-          <input
-            type="checkbox"
-            name="starter"
-            checked={starter.value}
-            onChange={this.handleChange}
-          />
+          <input type="checkbox" name="starter" />
           ik wil starten, stuur mij een gratis starterspakket
         </FormItem>
         <FormItem checkbox="true">
-          <input
-            type="checkbox"
-            name="delicatessezaak"
-            checked={delicatessezaak.value}
-            onChange={this.handleChange}
-          />
+          <input type="checkbox" name="delicatessezaak" />
           meer info over aanbod voor delicatessezaken
         </FormItem>
         <FormItem checkbox="true">
-          <input
-            type="checkbox"
-            name="broodjeszaak"
-            checked={broodjeszaak.value}
-            onChange={this.handleChange}
-          />
+          <input type="checkbox" name="broodjeszaak" />
           meer info over aanbod voor broodjeszaken
         </FormItem>
         <FormItem checkbox="true">
-          <input
-            type="checkbox"
-            name="promofolder"
-            checked={promofolder.value}
-            onChange={this.handleChange}
-          />
+          <input type="checkbox" name="promofolder" />
           hou mij op de hoogte van de promoties, bezorg mij de promotiefolder
         </FormItem>
-        <Button type="submit" isDisabled={ready !== true}>
-          verstuur bericht
-        </Button>
+        <Button type="submit">verstuur bericht</Button>
       </form>
     )
   }

@@ -167,6 +167,7 @@ class ContactForm extends React.Component {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        action="?no-cache"
         className={css`
           display: flex;
           flex-direction: column;

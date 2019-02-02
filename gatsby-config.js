@@ -156,11 +156,6 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify', //keep last
       options: {
         headers: {
-          '/*': [
-            // "Content-Security-Policy: frame-ancestors 'self' https://*.storyblok.com/",
-            // "X-Frame-Options: ALLOW-FROM https://app.storyblok.com/",
-            'X-Frame-Options: ALLOW-FROM *',
-          ],
           '/sw.js': ['Cache-Control: no-cache'], //dont cache the service worker!
         },
         mergeSecurityHeaders: false,

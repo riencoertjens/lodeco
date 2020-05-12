@@ -9,24 +9,24 @@ public_folder: /images
 display_url: https://lodeco-eeckhout.be
 
 collections:
-  - name: leveranciers
-    label: Leveranciers
-    label_singular: leverancier
-    folder: src/content/leveranciers/
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
-    preview: false
-    fields:
-      - {
-          name: templateKey,
-          label: Template Key,
-          widget: hidden,
-          default: leverancier,
-        }
-      - { name: title, label: Naam, widget: string }
-      - { name: site, label: Site, widget: string }
-      - { name: featured, label: Uitgelicht, widget: boolean, default: true }
-      - { name: image, label: Afbeelding, widget: image, required: false }
+  # - name: leveranciers
+  #   label: Leveranciers
+  #   label_singular: leverancier
+  #   folder: src/content/leveranciers/
+  #   create: true
+  #   slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+  #   preview: false
+  #   fields:
+  #     - {
+  #         name: templateKey,
+  #         label: Template Key,
+  #         widget: hidden,
+  #         default: leverancier,
+  #       }
+  #     - { name: title, label: Naam, widget: string }
+  #     - { name: site, label: Site, widget: string }
+  #     - { name: featured, label: Uitgelicht, widget: boolean, default: true }
+  #     - { name: image, label: Afbeelding, widget: image, required: false }
   - name: deliflash
     label: Deli Flash
     folder: src/content/deliflash/

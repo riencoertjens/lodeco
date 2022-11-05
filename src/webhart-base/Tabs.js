@@ -1,8 +1,8 @@
+import styled from '@emotion/styled'
 import React, { Component } from 'react'
-import styled, { css } from 'react-emotion'
-import { colors, mediaQuery } from '../webhart-base/utils/style'
-import { rhythm } from '../webhart-base/utils/style'
+
 import { Container } from '.'
+import { rhythm } from '../webhart-base/utils/style'
 
 const TabsWrapper = styled.div`
   position: relative;
@@ -49,7 +49,9 @@ class Tabs extends Component {
             </TabButton>
           ))}
         </TabButtons>
-        <TabContent><Container>{childrenWithProps}</Container></TabContent>
+        <TabContent>
+          <Container>{childrenWithProps}</Container>
+        </TabContent>
       </TabsWrapper>
     )
   }

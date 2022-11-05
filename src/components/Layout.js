@@ -1,14 +1,15 @@
+import styled from '@emotion/styled'
 import React from 'react'
+import { injectGlobal } from 'react-emotion'
 import Helmet from 'react-helmet'
-import styled, { injectGlobal, css } from 'react-emotion'
-import PageTransition from '../webhart-base/PageTransition'
+
 import SEO from '../webhart-base/SEO'
 
 import 'typeface-roboto'
 import 'typeface-roboto-slab'
 
-import Nav from './Navigation'
 import { colors } from '../webhart-base/utils/style'
+import Nav from './Navigation'
 
 // Global style setup
 injectGlobal`

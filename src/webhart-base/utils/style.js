@@ -1,6 +1,6 @@
+import { css, keyframes } from '@emotion/core'
 import facepaint from 'facepaint'
 import config from './site-config'
-import { keyframes, css } from 'emotion'
 
 import Typography from 'typography'
 

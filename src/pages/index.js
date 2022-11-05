@@ -1,29 +1,30 @@
 import React from 'react'
 
-import Image from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
+
+import { graphql, StaticQuery } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { StaticQuery, graphql } from 'gatsby'
 
 import Obfuscate from 'react-obfuscate'
 
+import { css } from 'react-emotion'
 import Hero from '../components/Hero'
-import ContactForm from '../webhart-base/ContactForm'
 import {
-  Container,
-  Section,
-  LinkButton,
   Column,
   Columns,
+  Container,
+  LinkButton,
+  Section,
 } from '../webhart-base'
+import ContactForm from '../webhart-base/ContactForm'
 import {
   colors,
-  rhythm,
+  mediaQueries,
   mediaQueryGT,
   mediaQueryLT,
-  mediaQueries,
+  rhythm,
   styles,
 } from '../webhart-base/utils/style'
-import { css } from 'react-emotion'
 
 import Logo from '../../static/images/logo.svg'
 import StampVers from '../../static/images/stamp1.svg'
@@ -255,7 +256,7 @@ class IndexPage extends React.Component {
                 </p>
                 <Columns className={styles.columns}>
                   <Column>
-                    <Image
+                    <GatsbyImage
                       alt="charcuterie"
                       fluid={data.voorverpakt.childImageSharp.fluid}
                       className={ColumnImageStyle}
@@ -272,7 +273,7 @@ class IndexPage extends React.Component {
                     </LinkButton>
                   </Column>
                   <Column>
-                    <Image
+                    <GatsbyImage
                       alt="slager"
                       fluid={data.zaken.childImageSharp.fluid}
                       className={css`
@@ -308,7 +309,7 @@ class IndexPage extends React.Component {
                         z-index: 9999;
                       `}
                     />
-                    <Image
+                    <GatsbyImage
                       alt="starters"
                       fluid={data.advies.childImageSharp.fluid}
                       className={ColumnImageStyle}
@@ -336,7 +337,7 @@ class IndexPage extends React.Component {
                 <h2>Kazen en bereide gerechten</h2>
                 <Columns className={styles.columns}>
                   <Column>
-                    <Image
+                    <GatsbyImage
                       alt="kazen"
                       fluid={data.kazen.childImageSharp.fluid}
                       className={ColumnImageStyle}
@@ -354,7 +355,7 @@ class IndexPage extends React.Component {
                   </Column>
 
                   <Column>
-                    <Image
+                    <GatsbyImage
                       alt="gerechten"
                       fluid={data.gerechten.childImageSharp.fluid}
                       className={ColumnImageStyle}
@@ -431,7 +432,7 @@ class IndexPage extends React.Component {
                             background: white;
                           `}
                         >
-                          <Image
+                          <GatsbyImage
                             alt={`deliflash magazine ${node.frontmatter.date}`}
                             fluid={node.frontmatter.image.childImageSharp.fluid}
                           />
@@ -484,7 +485,7 @@ class IndexPage extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Image
+                      <GatsbyImage
                         alt={node.name}
                         fluid={node.childImageSharp.fluid}
                         style={{ width: '100%' }}
@@ -500,7 +501,7 @@ class IndexPage extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Image
+                      <GatsbyImage
                         alt={node.frontmatter.title}
                         fluid={node.frontmatter.image.childImageSharp.fluid}
                         style={{ width: '100%' }}

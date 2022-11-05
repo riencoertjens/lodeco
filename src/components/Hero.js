@@ -1,13 +1,9 @@
+import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { css } from 'react-emotion'
 import { Container } from '../webhart-base'
-import GatsbyImage from 'gatsby-image'
-import {
-  rhythm,
-  mediaQueryLT,
-  mediaQueryGT,
-  mediaQueries,
-} from '../webhart-base/utils/style'
+
+import { mediaQueries, mediaQueryGT, rhythm } from '../webhart-base/utils/style'
 const Hero = props => {
   const { children, className } = props
   return (

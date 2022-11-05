@@ -11,11 +11,11 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+// const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   // https://github.com/danielmahon/gatsby-remark-relative-images#to-convert-frontmatter-images
-  fmImagesToRelative(node)
+  // fmImagesToRelative(node)
 
   const { createNodeField } = actions
 
@@ -54,9 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: node.fields.slug,
             component: path.resolve(
-              `./src/components/page-templates/${
-                node.frontmatter.templateKey
-              }-template.js`
+              `./src/components/page-templates/${node.frontmatter.templateKey}-template.js`
             ),
             context: {
               // Data passed to context is available

@@ -1,6 +1,8 @@
+import styled from '@emotion/styled'
 import React from 'react'
-import styled, { css } from 'react-emotion'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { css } from 'react-emotion'
+
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 const position = css`
   left: 50%;

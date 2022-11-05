@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Image from 'gatsby-image'
 import Link from 'gatsby-link'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const ContentComponent = ({ content, children, CMSPreview }) =>
   CMSPreview ? (
@@ -23,7 +23,7 @@ const ImageComponent = ({ image, alt, CMSPreview }) =>
   CMSPreview ? (
     <img src={image} alt={alt} style={{ width: '100%' }} />
   ) : (
-    <Image fluid={image.childImageSharp.fluid} alt={alt} />
+    <GatsbyImage fluid={image.childImageSharp.fluid} alt={alt} />
   )
 
 ImageComponent.defaultProps = {

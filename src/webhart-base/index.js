@@ -1,15 +1,16 @@
+import styled from '@emotion/styled'
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import { css } from 'react-emotion'
+
+import GatsbyLink from 'gatsby-link'
 import {
-  mediaQueries,
   breakpoints,
-  padding,
-  colors,
+  mediaQueries,
   mediaQueryGT,
   mediaQueryLT,
+  padding,
+  rhythm,
 } from './utils/style'
-import { rhythm } from './utils/style'
-import GatsbyLink from 'gatsby-link'
 
 export const ContainerStyle = props =>
   css(

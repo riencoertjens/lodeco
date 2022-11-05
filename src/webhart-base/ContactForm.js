@@ -170,7 +170,7 @@ class ContactForm extends React.Component {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         action="?no-cache"
-        className={css`
+        css={css`
           display: flex;
           flex-direction: column;
           align-items: flex-end;

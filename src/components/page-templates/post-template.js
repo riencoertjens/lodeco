@@ -1,12 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
 import SEO from 'webhart-base/SEO'
-import {
-  ImageComponent,
-  ContentComponent,
-  LinkComponent,
-} from './CMSComponents'
+import { ContentComponent, ImageComponent } from './CMSComponents'
 
 export const PostTemplate = ({ title, image, date, children, CMSPreview }) => {
   return (

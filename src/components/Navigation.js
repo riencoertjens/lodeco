@@ -93,7 +93,7 @@ class Navigation extends React.Component {
 
     return (
       <nav
-        className={css`
+        css={css`
           display: flex;
           flex-wrap: wrap;
           flex-direction: column;
@@ -133,7 +133,7 @@ class Navigation extends React.Component {
           to="/"
           key="nav-home"
           aria-label="home"
-          className={css`
+          css={css`
             ${scrolled && scrolledLogoStyle};
           `}
         >
@@ -145,7 +145,7 @@ class Navigation extends React.Component {
         <StyledLink
           to="/#contact"
           key="nav-contact"
-          className={css`
+          css={css`
             color: white;
             background: black;
             order: -2;

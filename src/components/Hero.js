@@ -9,7 +9,7 @@ const Hero = props => {
   return (
     <section
       key="page-hero"
-      className={css`
+      css={css`
         text-shadow: 1px 1px 0 white;
         width: 100vw;
         height: 100vh;
@@ -42,7 +42,7 @@ const Hero = props => {
     >
       <Container
         width="wide"
-        className={css`
+        css={css`
           padding: 0 0 ${rhythm(2)};
           display: flex;
           flex-flow: column;
@@ -56,7 +56,7 @@ const Hero = props => {
         {children}
         {props.image && (
           <div
-            className={css`
+            css={css`
               position: absolute;
               bottom: 0;
               left: 0;

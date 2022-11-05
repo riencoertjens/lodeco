@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Rien Coertjens <rien.coertjens@gmail.com>",
   "dependencies": {
+    "@emotion/eslint-plugin": "^11.10.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "emotion": "11.0.0",

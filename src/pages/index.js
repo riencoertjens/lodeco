@@ -194,7 +194,7 @@ class IndexPage extends React.Component {
           <React.Fragment>
             <Hero image={data.HeroImage.childImageSharp.fixed}>
               <div
-                className={css`
+                css={css`
                   background: white;
                   background: linear-gradient(
                     rgba(255, 255, 255, 0.8) 75%,
@@ -208,7 +208,7 @@ class IndexPage extends React.Component {
                   <img
                     src={StampVers}
                     alt="50 jaar vers"
-                    className={css`
+                    css={css`
                       position: absolute;
                       z-index: 9999;
                       margin: 0;
@@ -227,7 +227,7 @@ class IndexPage extends React.Component {
                 </p>
               </div>
               <div
-                className={css`
+                css={css`
                   ${mediaQueries({
                     marginBottom: ['00px', '50px'],
                   })};
@@ -276,7 +276,7 @@ class IndexPage extends React.Component {
                     <GatsbyImage
                       alt="slager"
                       fluid={data.zaken.childImageSharp.fluid}
-                      className={css`
+                      css={css`
                         ${ColumnImageStyle};
                         z-index: 999;
                         ${mediaQueryGT['tablet']} {
@@ -301,7 +301,7 @@ class IndexPage extends React.Component {
                     <img
                       src={StampGratis}
                       alt="gratis starterspakket"
-                      className={css`
+                      css={css`
                         position: absolute;
                         top: 0;
                         right: 50%;
@@ -382,7 +382,7 @@ class IndexPage extends React.Component {
             </Section>
             <Section
               name="promoties"
-              className={css`
+              css={css`
                 p {
                   color: black;
                 }
@@ -397,7 +397,7 @@ class IndexPage extends React.Component {
                   en mogelijkheden om uw klanten aan te trekken en te animeren.
                 </p>
                 <div
-                  className={css`
+                  css={css`
                     display: flex;
                     justify-content: center;
                     flex-direction: row-reverse;
@@ -411,7 +411,7 @@ class IndexPage extends React.Component {
                     data.deliflash.edges.map(({ node }, i) => (
                       <div key={i}>
                         <h4
-                          className={css`
+                          css={css`
                             margin-bottom: ${rhythm(1 / 2)};
                           `}
                         >
@@ -423,7 +423,7 @@ class IndexPage extends React.Component {
                           href={node.frontmatter.pdf.publicURL}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className={css`
+                          css={css`
                             width: 100%;
                             max-width: 350px;
                             display: block;
@@ -446,7 +446,7 @@ class IndexPage extends React.Component {
             <Section name="aanbod">
               <Container>
                 <h2
-                  className={css`
+                  css={css`
                     color: black;
                   `}
                 >
@@ -458,7 +458,7 @@ class IndexPage extends React.Component {
                   van gerenommeerde leveranciers.
                 </p>
                 <div
-                  className={css`
+                  css={css`
                     display: flex;
                     max-width: 900px;
                     margin: 0 auto;
@@ -517,7 +517,7 @@ class IndexPage extends React.Component {
                   volledige lijst leveranciers
                 </Button>
                 <div
-                  className={css`
+                  css={css`
                     margin: ${rhythm()};
                     display: flex;
                     flex-direction: column;
@@ -549,19 +549,19 @@ class IndexPage extends React.Component {
             <Section
               name="contact"
               background="#404040"
-              className={css`
+              css={css`
                 color: #d1d1d1;
                 padding: 0;
               `}
             >
               <Container>
                 <Columns
-                  className={css`
+                  css={css`
                     text-align: left;
                   `}
                 >
                   <Column
-                    className={css`
+                    css={css`
                       && {
                         flex: 1 1 350px;
                         padding: 150px ${rhythm(2)} ${rhythm(1)};
@@ -578,7 +578,7 @@ class IndexPage extends React.Component {
                     `}
                   >
                     <img
-                      className={css`
+                      css={css`
                         position: absolute;
                         top: 0;
                         width: 200px;
@@ -591,7 +591,7 @@ class IndexPage extends React.Component {
                       alt="logo"
                     />
                     <p
-                      className={css`
+                      css={css`
                         && {
                           font-size: 20px;
                           color: #d1d1d1;
@@ -604,7 +604,7 @@ class IndexPage extends React.Component {
                       kleinhandel die zich wil onderscheiden.
                     </p>
                     <p
-                      className={css`
+                      css={css`
                         && {
                           margin: 0;
                           font-size: 15px;
@@ -643,7 +643,7 @@ class IndexPage extends React.Component {
                     </p>
                   </Column>
                   <Column
-                    className={css`
+                    css={css`
                       && {
                         flex: 1 1 500px;
                         position: relative;
@@ -666,7 +666,7 @@ class IndexPage extends React.Component {
                 </Columns>
               </Container>
               <div
-                className={css`
+                css={css`
                   width: 100%;
                   text-align: center;
                   font-size: 15px;

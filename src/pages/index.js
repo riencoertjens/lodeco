@@ -7,7 +7,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Obfuscate from 'react-obfuscate'
 
-import { css } from 'react-emotion'
+import { css } from '@emotion/react'
 import Hero from '../components/Hero'
 import {
   Column,

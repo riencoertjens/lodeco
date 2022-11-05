@@ -1,8 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "./node_modules/jl-toolbox/eslint.js"
-  ],
+  "extends": ["./node_modules/kcd-scripts/eslint.js"],
   "globals": {
     "graphql": true
   },

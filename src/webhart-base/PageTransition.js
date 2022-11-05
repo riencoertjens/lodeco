@@ -1,6 +1,6 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import React from 'react'
-import { css } from 'react-emotion'
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 

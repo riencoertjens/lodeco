@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-require('babel-polyfill')
+// require('babel-polyfill')
 
 const _ = require('lodash')
 const path = require('path')

@@ -1,6 +1,6 @@
+import { injectGlobal } from '@emotion/css'
 import styled from '@emotion/styled'
 import React from 'react'
-import { injectGlobal } from 'react-emotion'
 import Helmet from 'react-helmet'
 
 import SEO from '../webhart-base/SEO'

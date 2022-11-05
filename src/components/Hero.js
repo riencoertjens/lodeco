@@ -1,6 +1,6 @@
+import { css } from '@emotion/react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
-import { css } from 'react-emotion'
 import { Container } from '../webhart-base'
 
 import { mediaQueries, mediaQueryGT, rhythm } from '../webhart-base/utils/style'

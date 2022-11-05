@@ -1,8 +1,8 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import Link from 'gatsby-link'
 import React from 'react'
 import { Spin as Hamburger } from 'react-burgers'
-import { css } from 'react-emotion'
 
 import Logo from '../../static/images/logo.svg'
 

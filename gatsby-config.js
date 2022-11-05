@@ -103,12 +103,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: './static/images/favicon.png',
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: config.manifest,
     },
@@ -127,8 +121,6 @@ module.exports = {
         sitemap: `${config.siteUrl}/sitemap.xml`,
       },
     },
-    `gatsby-plugin-offline`,
-
     // analytics
     {
       resolve: `gatsby-plugin-google-analytics`,

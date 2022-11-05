@@ -1,5 +1,5 @@
+import GatsbyImage from 'gatsby-image'
 import Link from 'gatsby-link'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 

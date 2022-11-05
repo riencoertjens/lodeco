@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import GatsbyImage from 'gatsby-image'
 import React from 'react'
 import { Container } from '../webhart-base'
 
